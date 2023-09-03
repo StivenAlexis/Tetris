@@ -10,4 +10,17 @@ public class Piece {
     void setPieceConfiguration(String value){
         pieceConfiguration = value;
     }
+
+    public boolean checkPiece( String Piece) {
+        return getPieceConfiguration() == Piece;
+    }
+
+    public void rotate_full_clockwise(String directio){
+
+        // DogPiece positions
+       // if (getPieceConfiguration()==  ){
+            
+            
+        }
+
 }
