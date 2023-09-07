@@ -40,8 +40,7 @@ public class PieceTest{
         assertNotNull(t);
     }
 
-    //TODO: verificar piezas
-
+    // TODO: verificar piezas
    
     @Test
     public void check_DogPiece_true() {
@@ -132,11 +131,6 @@ public class PieceTest{
 
     }
 
-
-
-
-
-
     @Test
     public void rotate_full_clockwise(){
         //Piece t = new DogPiece();
@@ -155,24 +149,5 @@ public class PieceTest{
         }
     
     }
-   
-     
-    @Test
-    public void rotate_full_counter_clockwise(){
-
-
-
-    }
-    
-
-// test arriba hecho por milanesa
-
-    @Test
-    public void previous(){
-
-
-    }
     */
 }
-
-
