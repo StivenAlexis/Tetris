@@ -6,37 +6,37 @@ public class PieceTest{
 
     @Test
     public void Instantiate_piece_test(){
-        Piece t = new Piece();
+        PieceBase t = new PieceBase();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Tpiece_test(){
-        Piece t = new TPiece();
+        PieceBase t = new TPiece();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Lpiece_test(){
-        Piece t = new LPiece();
+        PieceBase t = new LPiece();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Dogpiece_test(){
-        Piece t = new DogPiece();
+        PieceBase t = new DogPiece();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Squarepiece_test(){
-        Piece t = new DogPiece();
+        PieceBase t = new DogPiece();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Stickpiece_test(){
-        Piece t = new StickPiece();
+        PieceBase t = new StickPiece();
         assertNotNull(t);
     }
 

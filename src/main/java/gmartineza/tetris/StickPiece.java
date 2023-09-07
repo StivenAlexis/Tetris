@@ -1,24 +1,13 @@
 package gmartineza.tetris;
 
-public class StickPiece extends Piece{
-    
-    public StickPiece(){
-        super();
-        setPieceConfiguration(int[][] stickPiece = {
+public class StickPiece extends PieceBase{
+        byte[][] stickPiece1 = {
             {1},
             {1},
             {1},
-            {1}}
-        );
-    
-    
-        /*
-            1000
-            1000
-            1000
-            1000
-         */
-    
-    
-    }
+            {1}};
+
+        byte[][] stickPiece2 = {
+                { 1, 1, 1, 1 }
+        };
 }

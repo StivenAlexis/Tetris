@@ -1,20 +1,25 @@
 package gmartineza.tetris;
 
-public class DogPiece extends Piece{
-    public DogPiece(){
-        super();
-        setPieceConfiguration(int[][] dogPiece = {{1, 1, 0},
-                                                  {0, 1, 1}};
-);
-    }
-
-        /*
-            1100
-            0110
-            0000
-            0000
-         */
+public class DogPiece extends PieceBase{
+    byte[][] dogPieceLeft1 = {
+            { 1, 1, 0 },
+            { 0, 1, 1 }
+    };
     
+    byte[][] dogPieceLeft2 = {
+            { 0, 1 },
+            { 1, 1 },
+            { 1, 0 }
+    };
 
-    //TODO: expectedPC()
+    byte[][] dogPieceRight1 = {
+            { 0, 1, 1 },
+            { 1, 1, 0 }
+    };
+
+    byte[][] dogPieceRight2 = {
+            { 1, 0 },
+            { 1, 1 },
+            { 0, 1 }
+    };
 }
