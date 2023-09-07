@@ -1,17 +1,6 @@
 package gmartineza.tetris;
 
 public class DogPiece extends PieceBase{
-    byte[][] dogPieceLeft1 = {
-            { 1, 1, 0 },
-            { 0, 1, 1 }
-    };
-    
-    byte[][] dogPieceLeft2 = {
-            { 0, 1 },
-            { 1, 1 },
-            { 1, 0 }
-    };
-
     byte[][] dogPieceRight1 = {
             { 0, 1, 1 },
             { 1, 1, 0 }
@@ -21,5 +10,16 @@ public class DogPiece extends PieceBase{
             { 1, 0 },
             { 1, 1 },
             { 0, 1 }
+    };
+
+    byte[][] dogPieceLeft1 = {
+            { 1, 1, 0 },
+            { 0, 1, 1 }
+    };
+
+    byte[][] dogPieceLeft2 = {
+            { 0, 1 },
+            { 1, 1 },
+            { 1, 0 }
     };
 }

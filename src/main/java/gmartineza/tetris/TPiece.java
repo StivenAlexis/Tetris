@@ -1,6 +1,7 @@
 package gmartineza.tetris;
 
 public class TPiece extends PieceBase{
+
     byte[][] tPiece1 = {
             { 0, 1, 0 },
             { 1, 1, 1 }
