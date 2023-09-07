@@ -3,7 +3,9 @@ package gmartineza.tetris;
 public class DogPiece extends Piece{
     public DogPiece(){
         super();
-        setPieceConfiguration("1100110000000000");
+        setPieceConfiguration(int[][] dogPiece = {{1, 1, 0},
+                                                  {0, 1, 1}};
+);
     }
 
         /*
