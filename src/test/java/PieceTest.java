@@ -131,6 +131,7 @@ public class PieceTest{
 
     }
 
+    /* 
     @Test
     public void rotate_full_clockwise(){
         //Piece t = new DogPiece();
@@ -140,7 +141,6 @@ public class PieceTest{
         Piece dog = new DogPiece();
     }
      
-     /* 
       // llamar funcion que rote (rotate(counter/clockwise))y chequear que la rota bien (getPieceConfiguration())
         for (short i = 0; i < 4; i++) {
             dog.rotate(clockwise);
