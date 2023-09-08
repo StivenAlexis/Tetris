@@ -18,19 +18,19 @@ public class PieceTest{
 
     @Test
     public void Instantiate_Lpiece_test(){
-        PieceBase t = new LPiece();
+        PieceBase t = new LPieceRight();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Dogpiece_test(){
-        PieceBase t = new DogPiece();
+        PieceBase t = new DogPieceRight();
         assertNotNull(t);
     }
 
     @Test
     public void Instantiate_Squarepiece_test(){
-        PieceBase t = new DogPiece();
+        PieceBase t = new DogPieceRight();
         assertNotNull(t);
     }
 
@@ -45,7 +45,7 @@ public class PieceTest{
     @Test
     public void check_DogPiece_true() {
 
-        DogPiece T1 = new DogPiece();
+        DogPieceRight T1 = new DogPieceRight();
 
         assertEquals(true, T1.checkPiece("1100110000000000"));
 
@@ -53,7 +53,7 @@ public class PieceTest{
     @Test
     public void ccheck_DogPiece_false() {
 
-       DogPiece T1 = new DogPiece();
+       DogPieceRight T1 = new DogPieceRight();
 
         assertEquals(false, T1.checkPiece("0100111000000000"));
 
@@ -62,7 +62,7 @@ public class PieceTest{
     @Test
     public void check_LPiece_true() {
 
-        LPiece T1 = new LPiece();
+        LPieceRight T1 = new LPieceRight();
 
             assertEquals(true, T1.checkPiece("1000100010001100"));
 
@@ -71,7 +71,7 @@ public class PieceTest{
     @Test
         public void check_LPiece_false() {
 
-        LPiece T1 = new LPiece();
+        LPieceRight T1 = new LPieceRight();
 
             assertEquals(false, T1.checkPiece("10100100010001100"));
 

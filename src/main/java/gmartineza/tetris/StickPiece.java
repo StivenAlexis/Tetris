@@ -1,13 +1,19 @@
 package gmartineza.tetris;
 
-public class StickPiece extends PieceBase{
-        byte[][] stickPiece1 = {
-            {1},
-            {1},
-            {1},
-            {1}};
+import java.util.Arrays;
 
-        byte[][] stickPiece2 = {
+public class StickPiece extends PieceBase {
+    public StickPiece() {
+        super(Arrays.asList(
+            new byte[][] {
+                { 1 },
+                { 1 },
+                { 1 },
+                { 1 }
+            },
+            new byte[][] {
                 { 1, 1, 1, 1 }
-        };
+            }
+        ));
+    }
 }
