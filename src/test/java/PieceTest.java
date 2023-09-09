@@ -41,7 +41,7 @@ public class PieceTest{
     }
 
     // TODO: verificar piezas
-   
+   /* 
     @Test
     public void check_DogPiece_true() {
 
@@ -130,6 +130,30 @@ public class PieceTest{
         assertEquals(false, T1.checkPiece("1000100010001000"));
 
     }
+
+*/
+
+    @Test
+    public void rotateClowkwiseDog() {
+
+        DogPieceLeft dogL = new DogPieceLeft();
+
+       byte[][] dogStatus = new byte[][] {
+        { 0, 1 },
+        { 1, 1 },
+        { 1, 0 }};
+        
+       
+
+       dogL.rotateClockwise();
+       
+       assertArrayEquals(dogStatus,dogL.getCurrentOrientation());
+    }
+
+
+
+
+
 
     /* 
     @Test
