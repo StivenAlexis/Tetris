@@ -138,19 +138,48 @@ public class PieceTest{
 
         DogPieceLeft dogL = new DogPieceLeft();
 
-       byte[][] dogStatus = new byte[][] {
+       byte[][] dogExpected =  new byte[][] {
         { 0, 1 },
         { 1, 1 },
         { 1, 0 }};
-        
-       
-
+    
        dogL.rotateClockwise();
        
-       assertArrayEquals(dogStatus,dogL.getCurrentOrientation());
+       assertArrayEquals(dogExpected,dogL.getCurrentOrientation());
     }
+    
+    @Test
+    public void testOrientations() {
+        LPieceLeft L1 = new LPieceLeft();
 
+        // Definir las orientaciones esperadas en el mismo orden que se definen en LPieceLeft
+         byte[][][] expectedOrientations = {
+            {
+                { 1, 0, 0 },
+                { 1, 1, 1 }
+            },
+            {
+                { 1, 1 },
+                { 1, 0 },
+                { 1, 0 }
+            },
+            {
+                { 1, 1, 1 },
+                { 1, 0, 0 }
+            },
+            {
+                { 1, 1 },
+                { 0, 1 },
+                { 0, 1 }
+            }
+        };
 
+        // Probar todas las orientaciones
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], L1.getCurrentOrientation());
+            L1.rotateClockwise();
+        }
+    }
 
 
 

@@ -16,7 +16,7 @@ public class LPieceLeft extends PieceBase {
             },
             new byte[][] {
                 { 1, 1, 1 },
-                { 1, 0, 0 }
+                { 0, 0, 1 }
             },
             new byte[][] {
                 { 1, 1 },
