@@ -18,11 +18,11 @@ public class PieceBase implements IRotator {
         this.currentOrientationIndex = 0; // Initialize with the only orientation
     }
 
-    public void rotateClockwise() {
+    public void rotateRight() {
         currentOrientationIndex = (currentOrientationIndex + 1) % orientations.size();
     }
 
-    public void rotateCounterclockwise() {
+    public void rotateLeft() {
         currentOrientationIndex = (currentOrientationIndex - 1 + orientations.size()) % orientations.size();
     }
 

@@ -137,7 +137,7 @@ public class PieceBaseTest{
         { 1, 1 },
         { 1, 0 }};
     
-       dogL.rotateClockwise();
+       dogL.rotateRight();
        
        assertArrayEquals(dogExpected,dogL.getCurrentOrientation());
     }
@@ -171,7 +171,7 @@ public class PieceBaseTest{
         // Probar todas las orientaciones
         for (int i = 0; i < expectedOrientations.length; i++) {
             assertArrayEquals(expectedOrientations[i], L1.getCurrentOrientation());
-            L1.rotateClockwise();
+            L1.rotateRight();
         }
     }
 

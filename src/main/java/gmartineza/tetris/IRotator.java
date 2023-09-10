@@ -1,6 +1,6 @@
 package gmartineza.tetris;
 
 public interface IRotator {
-    public void rotateClockwise();
-    public void rotateCounterclockwise();
+    public void rotateRight();
+    public void rotateLeft();
 }
