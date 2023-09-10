@@ -3,7 +3,7 @@ package gmartineza.tetris;
 import java.util.List;
 import java.util.ArrayList;
 
-public class PieceBase {
+public class PieceBase implements IRotator {
     protected List<byte[][]> orientations;
     protected int currentOrientationIndex;
 

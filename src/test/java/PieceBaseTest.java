@@ -2,13 +2,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import gmartineza.tetris.*;
 
-public class PieceTest{
-
-    @Test
-    public void Instantiate_piece_test(){
-        PieceBase t = new PieceBase();
-        assertNotNull(t);
-    }
+public class PieceBaseTest{
 
     @Test
     public void Instantiate_Tpiece_test(){
