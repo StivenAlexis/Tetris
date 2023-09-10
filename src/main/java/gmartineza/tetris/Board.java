@@ -52,8 +52,5 @@ public class Board {
             }
         }
     
+        public void spawnNewPiece(){}
 }
-   
-   
-    // public spawnNewPiece(){}
-

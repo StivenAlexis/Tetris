@@ -18,7 +18,7 @@ Proyecto presentado como Trabajo Práctico 1 en el Ciclo Lectivo 2023 para la ma
 3. **Tablero y Movimiento de Piezas**
     - [x] El tablero "board" tiene dimensiones de 10x20 elementos.
     - [ ] Las piezas ingresan aleatoriamente en cualquier lugar del primer renglón del tablero.
-    - [ ] No se permite colocar piezas fuera del tablero.
+    - [x] No se permite colocar piezas fuera del tablero.
     - [ ] Las piezas descienden a medida que avanza un reloj (tick.java).
     - [ ] Solo la pieza actual puede moverse y descender, siempre que quepa en el espacio disponible en el tablero.
 

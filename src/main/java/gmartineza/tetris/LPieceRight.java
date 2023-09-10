@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class LPieceRight extends PieceBase {
     public LPieceRight() {
-        super(Arrays.asList(
+        super("l right", Arrays.asList(
             new byte[][] {
                 { 0, 0, 1 },
                 { 1, 1, 1 }

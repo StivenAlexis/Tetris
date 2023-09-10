@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class TPiece extends PieceBase {
     public TPiece() {
-        super(Arrays.asList(
+        super("stick", Arrays.asList(
             new byte[][] {
                 { 0, 1, 0 },
                 { 1, 1, 1 }

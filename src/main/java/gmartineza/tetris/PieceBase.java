@@ -4,18 +4,21 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class PieceBase implements IRotator {
+    public String name;
     protected List<byte[][]> orientations;
     protected int currentOrientationIndex;
 
-    public PieceBase(List<byte[][]> orientations) {
+    public PieceBase(String name, List<byte[][]> orientations) {
+        this.name = name;
         this.orientations = orientations;
-        this.currentOrientationIndex = 0; // Initialize with the first orientation
+        this.currentOrientationIndex = 0;
     }
 
-    public PieceBase(byte[][] orientation) {
+    public PieceBase(String name, byte[][] orientation) {
+        this.name = name;
         this.orientations = new ArrayList<>();
         this.orientations.add(orientation);
-        this.currentOrientationIndex = 0; // Initialize with the only orientation
+        this.currentOrientationIndex = 0;
     }
 
     public void rotateRight() {

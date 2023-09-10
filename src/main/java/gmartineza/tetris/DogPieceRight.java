@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class DogPieceRight extends PieceBase {
     public DogPieceRight() {
-        super(Arrays.asList(
+        super("dog right", Arrays.asList(
             new byte[][] {
                 { 0, 1, 1 },
                 { 1, 1, 0 }
