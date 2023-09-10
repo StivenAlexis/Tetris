@@ -1,9 +1,12 @@
 package gmartineza.tetris;
 
+import java.util.Random;
+
 public class Board {
     private byte[][] board;
     private final byte width = 10;
     private final byte height = 20;
+    private Random random = new Random();
 
     public Board() {
         board = new byte[height][width];
@@ -17,8 +20,8 @@ public class Board {
     
         public boolean canPlacePiece(PieceBase piece, int row, int col) {
             byte[][] orientation = piece.getCurrentOrientation();
-            int pieceHeight = orientation.length;
-            int pieceWidth = orientation[0].length;
+            int pieceHeight = piece.getHeight();
+            int pieceWidth = piece.getWidth();
     
             // Verificar si la pieza cabe en la matriz en la posición especificada
             if (row + pieceHeight > height || col + pieceWidth > width) {
@@ -39,8 +42,8 @@ public class Board {
     
         public void placePiece(PieceBase piece, int row, int col) {
             byte[][] orientation = piece.getCurrentOrientation();
-            int pieceHeight = orientation.length;
-            int pieceWidth = orientation[0].length;
+            int pieceHeight = piece.getHeight();
+            int pieceWidth = piece.getWidth();
     
             // Insertar la pieza en la matriz en la posición especificada
             for (int i = 0; i < pieceHeight; i++) {
@@ -52,5 +55,17 @@ public class Board {
             }
         }
     
-        public void spawnNewPiece(){}
+        public PieceBase getRandomPieceType(){
+            // TODO: rng with switch to instantiate a piece (type)
+
+        }
+
+        public void spawnNewPiece() {
+            PieceBase randomPieceType = getRandomPieceType();
+            int maxColumn = width - randomPieceType.getWidth();
+            int randomCol = random.nextInt(maxColumn + 1);
+            if (canPlacePiece(randomPieceType, 0, randomCol)) {
+                // TODO: placePiece(randomPieceType, 0, randomCol)
+            }
+        }
 }

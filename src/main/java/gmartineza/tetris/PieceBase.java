@@ -33,7 +33,22 @@ public class PieceBase implements IRotator {
         return orientations.get(currentOrientationIndex);
     }
 
-    public byte width(byte[][] piece) {
-        return (byte) piece[0].length;
+
+    public int getWidth() {
+        byte[][] piece = getCurrentOrientation();
+        if (piece != null && piece.length > 0) {
+            return piece[0].length;
+        } else {
+            throw new IllegalStateException("Error when trying to get Piece Width: Piece orientation is not set or is empty.");
+        }
+    }
+
+    public int getHeight() {
+        byte[][] piece = getCurrentOrientation();
+        if (piece != null) {
+            return piece.length;
+        } else {
+            throw new IllegalStateException("Error when trying to get Piece Height: Piece orientation is not set.");
+        }
     }
 }
