@@ -34,24 +34,9 @@ public class PieceBaseTest{
         assertNotNull(t);
     }
 
-    @Test
-    public void rotateClowkwiseDog() {
 
-        DogPieceLeft dogL = new DogPieceLeft();
-
-        byte[][] dogExpected = new byte[][] {
-        { 0, 1 },
-        { 1, 1 },
-        { 1, 0 }};
-    
-       dogL.rotateRight();
-       
-       assertArrayEquals(dogExpected,dogL.getCurrentOrientation());
-    }
-    
-    
     @Test
-    public void testOrientationsDogPieceLeft() {
+    public void testOrientationsDogPieceLeftRotateRightTest() {
         DogPieceLeft testPiece = new DogPieceLeft();
         
          byte[][][] expectedOrientations = {{
@@ -72,7 +57,7 @@ public class PieceBaseTest{
     }
 
    @Test
-   public void testOrientationsDogPieceRight() {
+   public void testOrientationsDogPieceRightRotateRightTest() {
        DogPieceRight testPiece = new DogPieceRight();
        
          byte[][][] expectedOrientations = {{
@@ -93,7 +78,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsLPieceLeft() {
+    public void testOrientationsLPieceLeftRotateRightTest() {
         LPieceLeft testPiece = new LPieceLeft();
 
         // Definir las orientaciones esperadas en el mismo orden que se definen en LPieceLeft
@@ -126,7 +111,7 @@ public class PieceBaseTest{
     }
     
     @Test
-    public void testOrientationsLPieceRight() {
+    public void testOrientationLPieceRightRotateRightTest() {
         LPieceRight testPiece = new LPieceRight();
 
          byte[][][] expectedOrientations = {{
@@ -156,7 +141,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsSquarePiece() {
+    public void testOrientationsSquarePieceRotateRightTest() {
         SquarePiece testPiece = new SquarePiece();
 
          byte[][][] expectedOrientations = {{
@@ -171,7 +156,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsStickPiece() {
+    public void testOrientationsStickPieceRotateRightTest() {
         StickPiece testPiece = new StickPiece();
 
          byte[][][] expectedOrientations = {{
@@ -192,7 +177,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsTPiece() {
+    public void testOrientationsTPieceRotateRightTest() {
         TPiece testPiece = new TPiece();
 
          byte[][][] expectedOrientations = {
@@ -219,6 +204,184 @@ public class PieceBaseTest{
         for (int i = 0; i < expectedOrientations.length; i++) {
             assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
             testPiece.rotateRight();
+        }
+    }
+
+
+
+
+     @Test
+    public void testOrientationtDogPieceLeftRotateLeftTest() {
+        DogPieceLeft testPiece = new DogPieceLeft();
+        
+         byte[][][] expectedOrientations = {{
+                { 1, 1, 0 },
+                { 0, 1, 1 }
+            },
+            {
+                { 0, 1 },
+                { 1, 1 },
+                { 1, 0 }
+            }
+        };
+
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
+        }
+    }
+
+
+
+
+   @Test
+   public void testOrientationDogPieceRightRotateLeftTest() {
+       DogPieceRight testPiece = new DogPieceRight();
+       
+         byte[][][] expectedOrientations = {{
+                { 0, 1, 1 },
+                { 1, 1, 0 }
+            },
+            {
+                { 1, 0 },
+                { 1, 1 },
+                { 0, 1 }
+            }
+        };
+
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
+        }
+    }
+
+    @Test
+    public void testOrientationLPieceLeft() {
+        LPieceLeft testPiece = new LPieceLeft();
+
+        // Definir las orientaciones esperadas en el mismo orden que se definen en LPieceLeft
+         byte[][][] expectedOrientations = {
+            {
+                { 1, 0, 0 },
+                { 1, 1, 1 }
+            },
+            {
+                { 0, 1 },
+                { 0, 1 },
+                { 1, 1 }
+            },
+            {
+                { 1, 1, 1 },
+                { 0, 0, 1 }
+            },
+            {
+                { 1, 1 },
+                { 1, 0 },
+                { 1, 0 }
+            }
+        };
+
+        // Probar todas las orientaciones
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
+        }
+    }
+    
+    @Test
+    public void testOrientationLPieceRight() {
+        LPieceRight testPiece = new LPieceRight();
+
+         byte[][][] expectedOrientations = {{
+                { 0, 0, 1 },
+                { 1, 1, 1 }
+            },
+            {
+                { 1, 1 },
+                { 0, 1 },
+                { 0, 1 }
+            },
+            {
+                { 1, 1, 1 },
+                { 1, 0, 0 }
+            },
+            {
+                { 1, 0 },
+                { 1, 0 },
+                { 1, 1 }
+            }
+        };
+
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
+        }
+    }
+
+    @Test
+    public void testOrientationSquarePieceRotateLeftTest() {
+        SquarePiece testPiece = new SquarePiece();
+
+         byte[][][] expectedOrientations = {{
+            {1, 1},
+            {1, 1}
+        }};
+
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
+        }
+    }
+
+    @Test
+    public void testOrientationStickPieceRotateLeftTest() {
+        StickPiece testPiece = new StickPiece();
+
+         byte[][][] expectedOrientations = {{
+                { 1 },
+                { 1 },
+                { 1 },
+                { 1 }
+            },
+            {
+                { 1, 1, 1, 1 }
+            }
+        };
+
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
+        }
+    }
+
+    @Test
+    public void testOrientationTPieceRotateLeftTest() {
+        TPiece testPiece = new TPiece();
+
+         byte[][][] expectedOrientations = {
+            {
+                { 0, 1, 0 },
+                { 1, 1, 1 }
+            },
+            {
+                { 1, 0 },
+                { 1, 1 },
+                { 1, 0 }
+            },
+            {
+                { 1, 1, 1 },
+                { 0, 1, 0 }
+            },
+            {
+                { 0, 1 },
+                { 1, 1 },
+                { 0, 1 }
+            }
+        };
+
+        for (int i = 0; i < expectedOrientations.length; i++) {
+            assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
+            testPiece.rotateLeft();
         }
     }
 }
