@@ -5,31 +5,31 @@ import gmartineza.tetris.*;
 public class PieceBaseTest{
 
     @Test
-    public void Instantiate_Tpiece_test(){
+    public void InstantiateTpiecetest(){
         PieceBase t = new TPiece();
         assertNotNull(t);
     }
 
     @Test
-    public void Instantiate_Lpiece_test(){
+    public void InstantiateLpiecetest(){
         PieceBase t = new LPieceRight();
         assertNotNull(t);
     }
 
     @Test
-    public void Instantiate_Dogpiece_test(){
+    public void InstantiateDogpiecetest(){
         PieceBase t = new DogPieceRight();
         assertNotNull(t);
     }
 
     @Test
-    public void Instantiate_Squarepiece_test(){
+    public void InstantiateSquarepiecetest(){
         PieceBase t = new DogPieceRight();
         assertNotNull(t);
     }
 
     @Test
-    public void Instantiate_Stickpiece_test(){
+    public void InstantiateStickpiecetest(){
         PieceBase t = new StickPiece();
         assertNotNull(t);
     }
