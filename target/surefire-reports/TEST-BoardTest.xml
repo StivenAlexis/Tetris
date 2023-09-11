@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="PieceBaseTest" time="0.009" tests="13" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.174" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,17 +61,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testOrientationsLPieceLeft" classname="PieceBaseTest" time="0"/>
-  <testcase name="InstantiateLpiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="rotateClowkwiseDog" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsTPiece" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsStickPiece" classname="PieceBaseTest" time="0"/>
-  <testcase name="InstantiateStickpiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsDogPieceRight" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsSquarePiece" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsLPieceRight" classname="PieceBaseTest" time="0"/>
-  <testcase name="InstantiateTpiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsDogPieceLeft" classname="PieceBaseTest" time="0"/>
-  <testcase name="InstantiateSquarepiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="InstantiateDogpiecetest" classname="PieceBaseTest" time="0"/>
+  <testcase name="colisionTest" classname="BoardTest" time="0.039"/>
+  <testcase name="InstantiateBoardTest" classname="BoardTest" time="0"/>
 </testsuite>

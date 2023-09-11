@@ -17,6 +17,12 @@ public class Board {
         }
     }
 
+    public Board(byte[][] initialMatrix) {
+        if (initialMatrix.length != height || initialMatrix[0].length != width) {
+            throw new IllegalArgumentException("Initial matrix dimensions must match board dimensions.");
+        }
+        board = initialMatrix;
+    }
     
     private boolean canPlacePiece(PieceBase piece, int row, int col) {
         byte[][] orientation = piece.getCurrentOrientation();
