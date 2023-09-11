@@ -1,0 +1,11 @@
+gmartineza\tetris\Board.class
+gmartineza\tetris\LPieceLeft.class
+gmartineza\tetris\IRotator.class
+gmartineza\tetris\PieceBase.class
+gmartineza\tetris\Clock.class
+gmartineza\tetris\DogPieceRight.class
+gmartineza\tetris\LPieceRight.class
+gmartineza\tetris\TPiece.class
+gmartineza\tetris\DogPieceLeft.class
+gmartineza\tetris\StickPiece.class
+gmartineza\tetris\SquarePiece.class
