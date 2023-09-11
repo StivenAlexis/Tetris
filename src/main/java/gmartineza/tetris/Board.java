@@ -57,7 +57,7 @@ public class Board {
             }
         }
 
-        return row;
+        return row; // retornar dónde se comenzó a dibujar la pieza para referenciar en el siguiente tick
     }
 
     private PieceBase getRandomPieceType() {
@@ -83,14 +83,54 @@ public class Board {
         }
     }
 
+    private PieceBase getRandomPieceType(int chosenPieceType) {
+        switch (chosenPieceType) {
+            case 0:
+                return new SquarePiece();
+            case 1:
+                return new StickPiece();
+            case 2:
+                return new TPiece();
+            case 3:
+                return new LPieceLeft();
+            case 4:
+                return new LPieceRight();
+            case 5:
+                return new DogPieceLeft();
+            case 6:
+                return new DogPieceRight();
+            default:
+                throw new IllegalStateException("getRandomPieceType(): Invalid random value for piece type, must be between 0 and 6.");
+        }
+    }
+
     public void spawnNewPiece() {
         PieceBase randomPieceType = getRandomPieceType();
+        for (int i = 0; i < random.nextInt(4) + 1; i++) {
+            randomPieceType.rotateLeft();
+        }
         int maxColumn = width - randomPieceType.getWidth();
         int randomCol = random.nextInt(maxColumn + 1);
         if (canPlacePiece(randomPieceType, 0, randomCol)) {
             placePiece(randomPieceType, 0, randomCol, true);
         }
     }
+
+    public void spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
+        PieceBase randomPieceType = getRandomPieceType(chosenPieceType);
+        for (int i = 0; i < chosenRotation; i++) {
+            randomPieceType.rotateLeft();
+        }
+        int maxColumn = width - randomPieceType.getWidth();
+        //int randomCol = random.nextInt(maxColumn + 1);
+        if (chosenCol > maxColumn){
+            throw new IllegalStateException("spawnNewPiece() chosenCol is outside allowed range");
+        }
+        else if (canPlacePiece(randomPieceType, 0, chosenCol)) {
+            placePiece(randomPieceType, 0, chosenCol, true);
+        }
+    }
+
 
     public void movePiece(PieceBase piece, int row, int col) {
         placePiece(piece, row, col, false);
