@@ -100,7 +100,7 @@ public class Board {
             case 6:
                 return new DogPieceRight();
             default:
-                throw new IllegalStateException("getRandomPieceType(): Invalid random value for piece type, must be between 0 and 6.");
+                throw new IllegalStateException("getRandomPieceType(): chosenPieceType is outside allowed range.");
         }
     }
 
@@ -124,7 +124,7 @@ public class Board {
         int maxColumn = width - randomPieceType.getWidth();
         //int randomCol = random.nextInt(maxColumn + 1);
         if (chosenCol > maxColumn){
-            throw new IllegalStateException("spawnNewPiece() chosenCol is outside allowed range");
+            throw new IllegalStateException("spawnNewPiece(): chosenCol is outside allowed range.");
         }
         else if (canPlacePiece(randomPieceType, 0, chosenCol)) {
             placePiece(randomPieceType, 0, chosenCol, true);
