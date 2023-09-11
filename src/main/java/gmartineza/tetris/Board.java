@@ -18,47 +18,52 @@ public class Board {
     }
 
     
-        public boolean canPlacePiece(PieceBase piece, int row, int col) {
-            byte[][] orientation = piece.getCurrentOrientation();
-            int pieceHeight = piece.getHeight();
-            int pieceWidth = piece.getWidth();
-    
-            // Verificar si la pieza cabe en la matriz en la posición especificada
-            if (row + pieceHeight > height || col + pieceWidth > width) {
-                return false;
-            }
-    
-            // Verificar si las celdas donde se va a insertar la pieza están vacías
-            for (int i = 0; i < pieceHeight; i++) {
-                for (int j = 0; j < pieceWidth; j++) {
-                    if (orientation[i][j] != 0 && board[row + i][col + j] != 0) {
-                        return false;
-                    }
+    private boolean canPlacePiece(PieceBase piece, int row, int col) {
+        byte[][] orientation = piece.getCurrentOrientation();
+        int pieceHeight = piece.getHeight();
+        int pieceWidth = piece.getWidth();
+
+        // Verificar si la pieza cabe en la matriz en la posición especificada
+        if (row + pieceHeight > height || col + pieceWidth > width) {
+            return false;
+        }
+
+        // Verificar si las celdas donde se va a insertar la pieza están vacías
+        for (int i = 0; i < pieceHeight; i++) {
+            for (int j = 0; j < pieceWidth; j++) {
+                if (orientation[i][j] != 0 && board[row + i][col + j] != 0) {
+                    return false;
                 }
             }
-    
-            return true;
         }
-    
-        public void placePiece(PieceBase piece, int row, int col) {
-            byte[][] orientation = piece.getCurrentOrientation();
-            int pieceHeight = piece.getHeight();
-            int pieceWidth = piece.getWidth();
-    
-            // Insertar la pieza en la matriz en la posición especificada
-            for (int i = 0; i < pieceHeight; i++) {
-                for (int j = 0; j < pieceWidth; j++) {
-                    if (orientation[i][j] != 0) {
+
+        return true;
+    }
+
+    public int placePiece(PieceBase piece, int row, int col, boolean place) {
+        byte[][] orientation = piece.getCurrentOrientation();
+        int pieceHeight = piece.getHeight();
+        int pieceWidth = piece.getWidth();
+
+        for (int i = 0; i < pieceHeight; i++) {
+            for (int j = 0; j < pieceWidth; j++) {
+                if (orientation[i][j] != 0) {
+                    if (place) {
                         board[row + i][col + j] = orientation[i][j];
+                    } else {
+                        board[row + i][col + j] = 0;
                     }
                 }
             }
         }
-    
-        public PieceBase getRandomPieceType(){
-            int pieceTypes = 7;
-            int randomValue = random.nextInt(pieceTypes);
-            switch (randomValue) {
+
+        return row;
+    }
+
+    private PieceBase getRandomPieceType() {
+        int pieceTypes = 7;
+        int randomValue = random.nextInt(pieceTypes);
+        switch (randomValue) {
             case 0:
                 return new SquarePiece();
             case 1:
@@ -75,15 +80,20 @@ public class Board {
                 return new DogPieceRight();
             default:
                 throw new IllegalStateException("getRandomPieceType(): Invalid random value for piece type");
-            }
         }
+    }
 
-        public void spawnNewPiece() {
-            PieceBase randomPieceType = getRandomPieceType();
-            int maxColumn = width - randomPieceType.getWidth();
-            int randomCol = random.nextInt(maxColumn + 1);
-            if (canPlacePiece(randomPieceType, 0, randomCol)) {
-                placePiece(randomPieceType, 0, randomCol);
-            }
+    public void spawnNewPiece() {
+        PieceBase randomPieceType = getRandomPieceType();
+        int maxColumn = width - randomPieceType.getWidth();
+        int randomCol = random.nextInt(maxColumn + 1);
+        if (canPlacePiece(randomPieceType, 0, randomCol)) {
+            placePiece(randomPieceType, 0, randomCol, true);
         }
+    }
+
+    public void movePiece(PieceBase piece, int row, int col) {
+        placePiece(piece, row, col, false);
+        placePiece(piece, row + 1, col, true);
+    }
 }
