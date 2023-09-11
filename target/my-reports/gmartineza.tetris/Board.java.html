@@ -25,45 +25,45 @@ public class Board {
 <span class="fc" id="L25">    }</span>
     
     private boolean canPlacePiece(PieceBase piece, int row, int col) {
-<span class="nc" id="L28">        byte[][] orientation = piece.getCurrentOrientation();</span>
-<span class="nc" id="L29">        int pieceHeight = piece.getHeight();</span>
-<span class="nc" id="L30">        int pieceWidth = piece.getWidth();</span>
+<span class="fc" id="L28">        byte[][] orientation = piece.getCurrentOrientation();</span>
+<span class="fc" id="L29">        int pieceHeight = piece.getHeight();</span>
+<span class="fc" id="L30">        int pieceWidth = piece.getWidth();</span>
 
         // Verificar si la pieza cabe en la matriz en la posición especificada
-<span class="nc bnc" id="L33" title="All 4 branches missed.">        if (row + pieceHeight &gt; height || col + pieceWidth &gt; width) {</span>
+<span class="pc bpc" id="L33" title="2 of 4 branches missed.">        if (row + pieceHeight &gt; height || col + pieceWidth &gt; width) {</span>
 <span class="nc" id="L34">            return false;</span>
         }
 
         // Verificar si las celdas donde se va a insertar la pieza están vacías
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (int i = 0; i &lt; pieceHeight; i++) {</span>
-<span class="nc bnc" id="L39" title="All 2 branches missed.">            for (int j = 0; j &lt; pieceWidth; j++) {</span>
-<span class="nc bnc" id="L40" title="All 4 branches missed.">                if (orientation[i][j] != 0 &amp;&amp; board[row + i][col + j] != 0) {</span>
-<span class="nc" id="L41">                    return false;</span>
+<span class="fc bfc" id="L38" title="All 2 branches covered.">        for (int i = 0; i &lt; pieceHeight; i++) {</span>
+<span class="fc bfc" id="L39" title="All 2 branches covered.">            for (int j = 0; j &lt; pieceWidth; j++) {</span>
+<span class="fc bfc" id="L40" title="All 4 branches covered.">                if (orientation[i][j] != 0 &amp;&amp; board[row + i][col + j] != 0) {</span>
+<span class="fc" id="L41">                    return false;</span>
                 }
             }
         }
 
-<span class="nc" id="L46">        return true;</span>
+<span class="fc" id="L46">        return true;</span>
     }
 
     public int placePiece(PieceBase piece, int row, int col, boolean place) {
-<span class="nc" id="L50">        byte[][] orientation = piece.getCurrentOrientation();</span>
-<span class="nc" id="L51">        int pieceHeight = piece.getHeight();</span>
-<span class="nc" id="L52">        int pieceWidth = piece.getWidth();</span>
+<span class="fc" id="L50">        byte[][] orientation = piece.getCurrentOrientation();</span>
+<span class="fc" id="L51">        int pieceHeight = piece.getHeight();</span>
+<span class="fc" id="L52">        int pieceWidth = piece.getWidth();</span>
 
-<span class="nc bnc" id="L54" title="All 2 branches missed.">        for (int i = 0; i &lt; pieceHeight; i++) {</span>
-<span class="nc bnc" id="L55" title="All 2 branches missed.">            for (int j = 0; j &lt; pieceWidth; j++) {</span>
-<span class="nc bnc" id="L56" title="All 2 branches missed.">                if (orientation[i][j] != 0) {</span>
-<span class="nc bnc" id="L57" title="All 2 branches missed.">                    if (place) {</span>
-<span class="nc" id="L58">                        board[row + i][col + j] = orientation[i][j];</span>
-<span class="nc" id="L59">                    } else {</span>
-<span class="nc" id="L60">                        board[row + i][col + j] = 0;</span>
+<span class="fc bfc" id="L54" title="All 2 branches covered.">        for (int i = 0; i &lt; pieceHeight; i++) {</span>
+<span class="fc bfc" id="L55" title="All 2 branches covered.">            for (int j = 0; j &lt; pieceWidth; j++) {</span>
+<span class="fc bfc" id="L56" title="All 2 branches covered.">                if (orientation[i][j] != 0) {</span>
+<span class="fc bfc" id="L57" title="All 4 branches covered.">                    if (place &amp;&amp; canPlacePiece(piece, row, col)) {</span>
+<span class="fc" id="L58">                        board[row + i][col + j] = orientation[i][j];</span>
+<span class="fc" id="L59">                    } else {</span>
+<span class="fc" id="L60">                        board[row + i][col + j] = 0;</span>
                     }
                 }
             }
         }
 
-<span class="nc" id="L66">        return row; // retornar dónde se comenzó a dibujar la pieza para referenciar en el siguiente tick</span>
+<span class="fc" id="L66">        return row; // retornar dónde se comenzó a dibujar la pieza para referenciar en el siguiente tick</span>
     }
 
     private PieceBase getRandomPieceType() {
@@ -90,13 +90,13 @@ public class Board {
     }
 
     private PieceBase getRandomPieceType(int chosenPieceType) {
-<span class="nc bnc" id="L93" title="All 8 branches missed.">        switch (chosenPieceType) {</span>
+<span class="pc bpc" id="L93" title="7 of 8 branches missed.">        switch (chosenPieceType) {</span>
             case 0:
 <span class="nc" id="L95">                return new SquarePiece();</span>
             case 1:
 <span class="nc" id="L97">                return new StickPiece();</span>
             case 2:
-<span class="nc" id="L99">                return new TPiece();</span>
+<span class="fc" id="L99">                return new TPiece();</span>
             case 3:
 <span class="nc" id="L101">                return new LPieceLeft();</span>
             case 4:
@@ -110,7 +110,7 @@ public class Board {
         }
     }
 
-    public void spawnNewPiece() {
+    public PieceBase spawnNewPiece() {
 <span class="nc" id="L114">        PieceBase randomPieceType = getRandomPieceType();</span>
 <span class="nc bnc" id="L115" title="All 2 branches missed.">        for (int i = 0; i &lt; random.nextInt(4) + 1; i++) {</span>
 <span class="nc" id="L116">            randomPieceType.rotateLeft();</span>
@@ -120,27 +120,31 @@ public class Board {
 <span class="nc bnc" id="L120" title="All 2 branches missed.">        if (canPlacePiece(randomPieceType, 0, randomCol)) {</span>
 <span class="nc" id="L121">            placePiece(randomPieceType, 0, randomCol, true);</span>
         }
-<span class="nc" id="L123">    }</span>
 
-    public void spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
-<span class="nc" id="L126">        PieceBase randomPieceType = getRandomPieceType(chosenPieceType);</span>
-<span class="nc bnc" id="L127" title="All 2 branches missed.">        for (int i = 0; i &lt; chosenRotation; i++) {</span>
-<span class="nc" id="L128">            randomPieceType.rotateLeft();</span>
+<span class="nc" id="L124">        return randomPieceType;</span>
+    }
+
+    public PieceBase spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
+<span class="fc" id="L128">        PieceBase randomPieceType = getRandomPieceType(chosenPieceType);</span>
+<span class="fc bfc" id="L129" title="All 2 branches covered.">        for (int i = 0; i &lt; chosenRotation; i++) {</span>
+<span class="fc" id="L130">            randomPieceType.rotateLeft();</span>
         }
-<span class="nc" id="L130">        int maxColumn = width - randomPieceType.getWidth();</span>
+<span class="fc" id="L132">        int maxColumn = width - randomPieceType.getWidth();</span>
         //int randomCol = random.nextInt(maxColumn + 1);
-<span class="nc bnc" id="L132" title="All 2 branches missed.">        if (chosenCol &gt; maxColumn){</span>
-<span class="nc" id="L133">            throw new IllegalStateException(&quot;spawnNewPiece(): chosenCol is outside allowed range.&quot;);</span>
+<span class="pc bpc" id="L134" title="1 of 2 branches missed.">        if (chosenCol &gt; maxColumn){</span>
+<span class="nc" id="L135">            throw new IllegalStateException(&quot;spawnNewPiece(): chosenCol is outside allowed range.&quot;);</span>
         }
-<span class="nc bnc" id="L135" title="All 2 branches missed.">        else if (canPlacePiece(randomPieceType, 0, chosenCol)) {</span>
-<span class="nc" id="L136">            placePiece(randomPieceType, 0, chosenCol, true);</span>
+<span class="pc bpc" id="L137" title="1 of 2 branches missed.">        else if (canPlacePiece(randomPieceType, 0, chosenCol)) {</span>
+<span class="fc" id="L138">            placePiece(randomPieceType, 0, chosenCol, true);</span>
         }
-<span class="nc" id="L138">    }</span>
+
+<span class="fc" id="L141">        return randomPieceType;</span>
+    }
 
 
     public void movePiece(PieceBase piece, int row, int col) {
-<span class="nc" id="L142">        placePiece(piece, row, col, false);</span>
-<span class="nc" id="L143">        placePiece(piece, row + 1, col, true);</span>
-<span class="nc" id="L144">    }</span>
+<span class="nc" id="L146">        placePiece(piece, row, col, false);</span>
+<span class="nc" id="L147">        placePiece(piece, row + 1, col, true);</span>
+<span class="nc" id="L148">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>

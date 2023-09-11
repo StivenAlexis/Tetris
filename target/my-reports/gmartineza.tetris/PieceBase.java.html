@@ -26,8 +26,8 @@ public class PieceBase implements IRotator {
 <span class="fc" id="L26">    }</span>
 
     public void rotateLeft() {
-<span class="nc" id="L29">        currentOrientationIndex = (currentOrientationIndex - 1 + orientations.size()) % orientations.size();</span>
-<span class="nc" id="L30">    }</span>
+<span class="fc" id="L29">        currentOrientationIndex = (currentOrientationIndex - 1 + orientations.size()) % orientations.size();</span>
+<span class="fc" id="L30">    }</span>
 
     public byte[][] getCurrentOrientation() {
 <span class="fc" id="L33">        return orientations.get(currentOrientationIndex);</span>
@@ -35,18 +35,18 @@ public class PieceBase implements IRotator {
 
 
     public int getWidth() {
-<span class="nc" id="L38">        byte[][] piece = getCurrentOrientation();</span>
-<span class="nc bnc" id="L39" title="All 4 branches missed.">        if (piece != null &amp;&amp; piece.length &gt; 0) {</span>
-<span class="nc" id="L40">            return piece[0].length;</span>
+<span class="fc" id="L38">        byte[][] piece = getCurrentOrientation();</span>
+<span class="pc bpc" id="L39" title="2 of 4 branches missed.">        if (piece != null &amp;&amp; piece.length &gt; 0) {</span>
+<span class="fc" id="L40">            return piece[0].length;</span>
         } else {
 <span class="nc" id="L42">            throw new IllegalStateException(&quot;getWidth(): Piece orientation is not set or is empty.&quot;);</span>
         }
     }
 
     public int getHeight() {
-<span class="nc" id="L47">        byte[][] piece = getCurrentOrientation();</span>
-<span class="nc bnc" id="L48" title="All 2 branches missed.">        if (piece != null) {</span>
-<span class="nc" id="L49">            return piece.length;</span>
+<span class="fc" id="L47">        byte[][] piece = getCurrentOrientation();</span>
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if (piece != null) {</span>
+<span class="fc" id="L49">            return piece.length;</span>
         } else {
 <span class="nc" id="L51">            throw new IllegalStateException(&quot;pieceHeight(): Piece orientation is not set.&quot;);</span>
         }

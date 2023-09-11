@@ -34,5 +34,24 @@ public class BoardTest {
         };
 
         Board board = new Board(initialBoard);
+    
+        int col = 7;
+    
+        PieceBase t = board.spawnNewPiece(2, 2, col);
+
+
+        board.placePiece(t, 0, col, false);
+        board.placePiece(t, 18, col, true);
+        // for 
+        // while
+        // directo?
+        // como cambiamos el enfoque a la siguiente pieza?
+            // guardamos la posición de la pieza actual mientras se la mueve hasta que se renueva a otra
+                // algo tiene que decir/pasar con que no se puede mover mas la pieza
+                // TODO: tenemos que saber cuando TENEMOS que crear una nueva pieza
     }
 }
+
+// TODO: poner pieza clipeando
+// TODO: spawnNewPiece(), y con todas las piezas
+// TODO: movePiece()
