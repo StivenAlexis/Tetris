@@ -39,7 +39,7 @@ public class PieceBase implements IRotator {
         if (piece != null && piece.length > 0) {
             return piece[0].length;
         } else {
-            throw new IllegalStateException("Error when trying to get Piece Width: Piece orientation is not set or is empty.");
+            throw new IllegalStateException("getWidth(): Piece orientation is not set or is empty.");
         }
     }
 
@@ -48,7 +48,7 @@ public class PieceBase implements IRotator {
         if (piece != null) {
             return piece.length;
         } else {
-            throw new IllegalStateException("Error when trying to get Piece Height: Piece orientation is not set.");
+            throw new IllegalStateException("pieceHeight(): Piece orientation is not set.");
         }
     }
 }

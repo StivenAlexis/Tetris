@@ -56,8 +56,26 @@ public class Board {
         }
     
         public PieceBase getRandomPieceType(){
-            // TODO: rng with switch to instantiate a piece (type)
-
+            int pieceTypes = 7;
+            int randomValue = random.nextInt(pieceTypes);
+            switch (randomValue) {
+            case 0:
+                return new SquarePiece();
+            case 1:
+                return new StickPiece();
+            case 2:
+                return new TPiece();
+            case 3:
+                return new LPieceLeft();
+            case 4:
+                return new LPieceRight();
+            case 5:
+                return new DogPieceLeft();
+            case 6:
+                return new DogPieceRight();
+            default:
+                throw new IllegalStateException("getRandomPieceType(): Invalid random value for piece type");
+            }
         }
 
         public void spawnNewPiece() {
@@ -65,7 +83,7 @@ public class Board {
             int maxColumn = width - randomPieceType.getWidth();
             int randomCol = random.nextInt(maxColumn + 1);
             if (canPlacePiece(randomPieceType, 0, randomCol)) {
-                // TODO: placePiece(randomPieceType, 0, randomCol)
+                placePiece(randomPieceType, 0, randomCol);
             }
         }
 }
