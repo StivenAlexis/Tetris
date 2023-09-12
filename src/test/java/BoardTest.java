@@ -103,7 +103,8 @@ public class BoardTest {
         assertarrayEquals(finishedBoard,initialBoard);
     }
 
-    private void assertarrayEquals(byte[][] finishedBoard, byte[][] initialBoard) {
+    private byte[] assertarrayEquals(byte[][] finishedBoard, byte[][] initialBoard) {
+        return null;
     }
 
     @Test
@@ -225,6 +226,10 @@ public class BoardTest {
         
         assertTrue(board.canPlacePiece(newPiece, 0, 0));
     }
+
+
+  
+
 }
 
         
