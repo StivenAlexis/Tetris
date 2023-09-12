@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: BoardTest
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.087 s - in BoardTest
+=======
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.142 s - in BoardTest
+>>>>>>> 15b736cc06d9e905274896b1bda471fe61b878ec
