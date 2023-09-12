@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.087" tests="2" errors="0" skipped="0" failures="0">
-=======
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.142" tests="11" errors="0" skipped="0" failures="0">
->>>>>>> 15b736cc06d9e905274896b1bda471fe61b878ec
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.082" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -17,17 +13,11 @@
     <property name="os.name" value="Windows 10"/>
     <property name="java.vm.specification.version" value="17"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
-<<<<<<< HEAD
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Users\stive\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\stive\AppData\Local\Temp\surefire4937955686945227096\surefirebooter11859936646617158861.jar C:\Users\stive\AppData\Local\Temp\surefire4937955686945227096 2023-09-11T21-26-11_855-jvmRun1 surefire7119797156543110473tmp surefire_015306462889732632521tmp"/>
+    <property name="sun.java.command" value="C:\Users\stive\AppData\Local\Temp\surefire17539636044499302562\surefirebooter7574785704755419157.jar C:\Users\stive\AppData\Local\Temp\surefire17539636044499302562 2023-09-11T22-53-48_983-jvmRun1 surefire13557224319152326835tmp surefire_05730475211033257190tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="d:\UCP\2doAno\Paradigmas2\tetris\target\test-classes;d:\UCP\2doAno\Paradigmas2\tetris\target\classes;C:\Users\stive\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\stive\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
-=======
-    <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire2347772767625623950\surefirebooter6065013475514955057.jar C:\Users\gmartineza\AppData\Local\Temp\surefire2347772767625623950 2023-09-11T22-36-48_364-jvmRun1 surefire1547237925795909843tmp surefire_02583131159046660393tmp"/>
-    <property name="surefire.test.class.path" value="C:\Users\gmartineza\code\tetris\target\test-classes;C:\Users\gmartineza\code\tetris\target\classes;C:\Users\gmartineza\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmartineza\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
->>>>>>> 15b736cc06d9e905274896b1bda471fe61b878ec
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\stive"/>
     <property name="user.language" value="es"/>
@@ -40,13 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-<<<<<<< HEAD
-    <property name="surefire.real.class.path" value="C:\Users\stive\AppData\Local\Temp\surefire4937955686945227096\surefirebooter11859936646617158861.jar"/>
-=======
-    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire2347772767625623950\surefirebooter6065013475514955057.jar;C:\\Users\\gmartineza\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.3\\org.jacoco.agent-0.8.3-runtime.jar"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\rt.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\classes"/>
->>>>>>> 15b736cc06d9e905274896b1bda471fe61b878ec
+    <property name="surefire.real.class.path" value="C:\Users\stive\AppData\Local\Temp\surefire17539636044499302562\surefirebooter7574785704755419157.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8+7"/>
@@ -73,19 +57,15 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-<<<<<<< HEAD
-  <testcase name="colisionTest" classname="BoardTest" time="0.016"/>
-=======
-  <testcase name="colisionTest" classname="BoardTest" time="0.017"/>
+  <testcase name="colisionTest" classname="BoardTest" time="0.014"/>
   <testcase name="dogPieceLeftSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="stickSpawnTest" classname="BoardTest" time="0.004"/>
+  <testcase name="stickSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="squarePieceSpawnTest" classname="BoardTest" time="0.001"/>
-  <testcase name="lPieceRightSpawnTest" classname="BoardTest" time="0.001"/>
+  <testcase name="lPieceRightSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="randomSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="tSpawnTest" classname="BoardTest" time="0.002"/>
+  <testcase name="tSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="lPieceLeftSpawnTest" classname="BoardTest" time="0"/>
->>>>>>> 15b736cc06d9e905274896b1bda471fe61b878ec
   <testcase name="InstantiateBoardTest" classname="BoardTest" time="0"/>
-  <testcase name="movePieceTest" classname="BoardTest" time="0.001"/>
+  <testcase name="movePieceTest" classname="BoardTest" time="0"/>
   <testcase name="dogPieceRightSpawnTest" classname="BoardTest" time="0"/>
 </testsuite>
