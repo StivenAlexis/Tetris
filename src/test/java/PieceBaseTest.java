@@ -36,7 +36,7 @@ public class PieceBaseTest{
 
 
     @Test
-    public void testOrientationsDogPieceLeftRotateRightTest() {
+    public void DogPieceLeftRotateRightTest() {
         DogPieceLeft testPiece = new DogPieceLeft();
         
          byte[][][] expectedOrientations = {{
@@ -57,7 +57,7 @@ public class PieceBaseTest{
     }
 
    @Test
-   public void testOrientationsDogPieceRightRotateRightTest() {
+   public void DogPieceRightRotateRightTest() {
        DogPieceRight testPiece = new DogPieceRight();
        
          byte[][][] expectedOrientations = {{
@@ -78,7 +78,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsLPieceLeftRotateRightTest() {
+    public void LPieceLeftRotateRightTest() {
         LPieceLeft testPiece = new LPieceLeft();
 
         // Definir las orientaciones esperadas en el mismo orden que se definen en LPieceLeft
@@ -111,7 +111,7 @@ public class PieceBaseTest{
     }
     
     @Test
-    public void testOrientationLPieceRightRotateRightTest() {
+    public void LPieceRightRotateRightTest() {
         LPieceRight testPiece = new LPieceRight();
 
          byte[][][] expectedOrientations = {{
@@ -141,7 +141,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsSquarePieceRotateRightTest() {
+    public void SquarePieceRotateRightTest() {
         SquarePiece testPiece = new SquarePiece();
 
          byte[][][] expectedOrientations = {{
@@ -156,7 +156,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsStickPieceRotateRightTest() {
+    public void StickPieceRotateRightTest() {
         StickPiece testPiece = new StickPiece();
 
          byte[][][] expectedOrientations = {{
@@ -177,7 +177,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationsTPieceRotateRightTest() {
+    public void TPieceRotateRightTest() {
         TPiece testPiece = new TPiece();
 
          byte[][][] expectedOrientations = {
@@ -211,7 +211,7 @@ public class PieceBaseTest{
 
 
      @Test
-    public void testOrientationtDogPieceLeftRotateLeftTest() {
+    public void DogPieceLeftRotateLeftTest() {
         DogPieceLeft testPiece = new DogPieceLeft();
         
          byte[][][] expectedOrientations = {{
@@ -235,7 +235,7 @@ public class PieceBaseTest{
 
 
    @Test
-   public void testOrientationDogPieceRightRotateLeftTest() {
+   public void DogPieceRightRotateLeftTest() {
        DogPieceRight testPiece = new DogPieceRight();
        
          byte[][][] expectedOrientations = {{
@@ -257,7 +257,7 @@ public class PieceBaseTest{
 
     /*
     @Test
-    public void testOrientationLPieceLeft() {
+    public void LPieceLeftRotateLeftTest() {
         LPieceLeft testPiece = new LPieceLeft();
 
         // Definir las orientaciones esperadas en el mismo orden que se definen en LPieceLeft
@@ -290,7 +290,7 @@ public class PieceBaseTest{
     } */
     
     /*@Test
-    public void testOrientationLPieceRight() {
+    public void LPieceRightRotateLeftTest() {
         LPieceRight testPiece = new LPieceRight();
 
          byte[][][] expectedOrientations = {{
@@ -320,7 +320,7 @@ public class PieceBaseTest{
     }*/
 
     @Test
-    public void testOrientationSquarePieceRotateLeftTest() {
+    public void SquarePieceRotateLeftTest() {
         SquarePiece testPiece = new SquarePiece();
 
          byte[][][] expectedOrientations = {{
@@ -335,7 +335,7 @@ public class PieceBaseTest{
     }
 
     @Test
-    public void testOrientationStickPieceRotateLeftTest() {
+    public void StickPieceRotateLeftTest() {
         StickPiece testPiece = new StickPiece();
 
          byte[][][] expectedOrientations = {{
@@ -356,7 +356,7 @@ public class PieceBaseTest{
     }
 
     /*@Test
-    public void testOrientationTPieceRotateLeftTest() {
+    public void TPieceRotateLeftTest() {
         TPiece testPiece = new TPiece();
 
          byte[][][] expectedOrientations = {

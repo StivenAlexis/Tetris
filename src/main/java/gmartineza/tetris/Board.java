@@ -7,7 +7,6 @@ public class Board {
     private final byte width = 10;
     private final byte height = 20;
     private Random random = new Random();
-    private int randomCol;
 
     public Board() {
         board = new byte[height][width];
@@ -18,18 +17,8 @@ public class Board {
         }
     }
 
-    public Board(byte[][] initialMatrix) {
-        if (initialMatrix.length != height || initialMatrix[0].length != width) {
-            throw new IllegalArgumentException("Initial matrix dimensions must match board dimensions.");
-        }
-        board = initialMatrix;
-    }
     
-    private int getRandomCol(){
-        return this.randomCol;
-    }
-    
-    public boolean canPlacePiece(PieceBase piece, int row, int col) {
+    private boolean canPlacePiece(PieceBase piece, int row, int col) {
         byte[][] orientation = piece.getCurrentOrientation();
         int pieceHeight = piece.getHeight();
         int pieceWidth = piece.getWidth();
@@ -59,7 +48,7 @@ public class Board {
         for (int i = 0; i < pieceHeight; i++) {
             for (int j = 0; j < pieceWidth; j++) {
                 if (orientation[i][j] != 0) {
-                    if (place && canPlacePiece(piece, row, col)) {
+                    if (place) {
                         board[row + i][col + j] = orientation[i][j];
                     } else {
                         board[row + i][col + j] = 0;
@@ -115,21 +104,19 @@ public class Board {
         }
     }
 
-    public PieceBase spawnNewPiece() {
+    public void spawnNewPiece() {
         PieceBase randomPieceType = getRandomPieceType();
         for (int i = 0; i < random.nextInt(4) + 1; i++) {
             randomPieceType.rotateLeft();
         }
         int maxColumn = width - randomPieceType.getWidth();
-        randomCol = random.nextInt(maxColumn + 1);
+        int randomCol = random.nextInt(maxColumn + 1);
         if (canPlacePiece(randomPieceType, 0, randomCol)) {
             placePiece(randomPieceType, 0, randomCol, true);
         }
-
-        return randomPieceType;
     }
 
-    public PieceBase spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
+    public void spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
         PieceBase randomPieceType = getRandomPieceType(chosenPieceType);
         for (int i = 0; i < chosenRotation; i++) {
             randomPieceType.rotateLeft();
@@ -142,14 +129,12 @@ public class Board {
         else if (canPlacePiece(randomPieceType, 0, chosenCol)) {
             placePiece(randomPieceType, 0, chosenCol, true);
         }
-
-        return randomPieceType;
     }
 
 
-    public void movePiece(PieceBase piece, int row) {
-        placePiece(piece, row, randomCol, false);
-        placePiece(piece, row + 1, randomCol, true);
+    public void movePiece(PieceBase piece, int row, int col) {
+        placePiece(piece, row, col, false);
+        placePiece(piece, row + 1, col, true);
     }
 
     public boolean isSingleLine(int row) {
