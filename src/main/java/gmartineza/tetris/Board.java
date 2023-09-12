@@ -17,6 +17,12 @@ public class Board {
         }
     }
 
+    public Board(byte[][] initialMatrix) {
+        if (initialMatrix.length != height || initialMatrix[0].length != width) {
+            throw new IllegalArgumentException("Initial matrix dimensions must match board dimensions.");
+        }
+        board = initialMatrix;
+    }
     
     private boolean canPlacePiece(PieceBase piece, int row, int col) {
         byte[][] orientation = piece.getCurrentOrientation();
@@ -135,31 +141,5 @@ public class Board {
     public void movePiece(PieceBase piece, int row, int col) {
         placePiece(piece, row, col, false);
         placePiece(piece, row + 1, col, true);
-    }
-
-    public boolean isSingleLine(int row) {
-        for (int col = 0; col < row; col++) {
-            if (board[row][col] != 1){
-                return false;
-            }
-        }
-        return true;
-    }
-
-    public void clearAndShiftRow(int rowIndex) {
-        if (rowIndex < 0 || rowIndex >= height) {
-            throw new IllegalArgumentException("clearAndShiftRow: Invalid rowIndex");
-        }
-            if (isSingleLine(rowIndex)) {
-            for (int col = 0; col < width; col++) {
-                board[rowIndex][col] = 0;
-            }
-
-            for (int row = rowIndex; row > 0; row--) {
-                for (int col = 0; col < width; col++) {
-                    board[row][col] = board[row - 1][col];
-                }
-            }
-        }
     }
 }
