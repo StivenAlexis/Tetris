@@ -24,8 +24,12 @@ public class Board {
         }
         board = initialMatrix;
     }
+
+    public byte[][] getMatrix(){
+        return board;
+    }
     
-    public boolean canPlacePiece(PieceBase piece, int row, int col) {
+    private boolean canPlacePiece(PieceBase piece, int row, int col) {
         byte[][] orientation = piece.getCurrentOrientation();
         int pieceHeight = piece.getHeight();
         int pieceWidth = piece.getWidth();
@@ -121,6 +125,9 @@ public class Board {
         if (canPlacePiece(randomPieceType, 0, randomCol)) {
             placePiece(randomPieceType, 0, randomCol, true);
         }
+        else {
+            throw new IllegalStateException("spawnNewPiece: Cannot place piece.");
+        }
 
         return randomPieceType;
     }
@@ -137,6 +144,9 @@ public class Board {
         }
         else if (canPlacePiece(randomPieceType, 0, chosenCol)) {
             placePiece(randomPieceType, 0, chosenCol, true);
+        }
+        else {
+            throw new IllegalStateException("spawnNewPiece: Cannot place piece.");
         }
 
         return randomPieceType;
