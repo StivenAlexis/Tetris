@@ -192,7 +192,7 @@ public class BoardTest {
         PieceBase newPiece = board.spawnNewPiece();
     }
 
-    /*@Test
+    @Test
     public void boardIsNotFullTest(){
 
        
@@ -222,10 +222,35 @@ public class BoardTest {
         };
       
         Board board = new Board(initialBoard);
-        PieceBase newPiece = board.spawnNewPiece();
+        PieceBase squarePiece = board.spawnNewPiece(0, 0, 0);
         
-        assertTrue(board.canPlacePiece(newPiece, 0, 0));
-    }*/
+        byte[][] finalBoard = new byte[][] {
+            
+                { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+            
+        };
+        
+        assertArrayEquals(finalBoard, board.getMatrix());
+    }
 }
 // TODO: poner pieza clipeando
 // TODO: spawnNewPiece(), y con todas las piezas
