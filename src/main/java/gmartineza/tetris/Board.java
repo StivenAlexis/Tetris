@@ -165,7 +165,7 @@ public class Board {
         if (rowIndex < 0 || rowIndex >= height) {
             throw new IllegalArgumentException("clearAndShiftRow: Invalid rowIndex");
         }
-        if (isSingleLine(rowIndex)) {
+            if (isSingleLine(rowIndex)) {
             for (int col = 0; col < width; col++) {
                 board[rowIndex][col] = 0;
             }
@@ -176,5 +176,5 @@ public class Board {
                 }
             }
         }
-    }
+    }*/
 }

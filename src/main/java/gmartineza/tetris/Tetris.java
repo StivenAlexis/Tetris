@@ -10,15 +10,16 @@ public class Tetris {
     int row = 0;
     int randomCol;
     int col = 0;
+    private int singleLineCounter;
         // Iniciar el juego
-
+   
         public void start() {
             
         
             while (true) {
                 // Insertar una nueva pieza aleatoria en la parte superior
                 currentPiece = board.spawnNewPiece();
-                System.out.println();
+                
                 // Bajar la pieza hasta llegar al final
             
                  while (board.canPlacePiece(currentPiece, row, col)) {
@@ -36,19 +37,29 @@ public class Tetris {
                    
                 }
                 
-                for (row = 0; row < 21; row++) {
-                    board.isSingleLine(row);
-                }
+                tetrisCompleteCounter();
 
                 
                 
-                
                 // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza o hacer 5 tetris)
-                if (! board.canPlacePiece(currentPiece,0,0)||  ) {
+                if (! board.canPlacePiece(currentPiece,0,0) || ) {
                     break; // El juego ha terminado
                 }
             }
         }
+
+
+        private void tetrisCompleteCounter() {
+                    for (int row = 0; row < 21; row++) {
+                    board.clearAndShiftRow(row);
+                    count++; // Incrementa el contador
+            }
+            return count;
+        }   
+
+
+
+}
         
     
 
@@ -58,4 +69,4 @@ public class Tetris {
 
 
 
-}
+

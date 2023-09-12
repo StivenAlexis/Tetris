@@ -75,7 +75,7 @@ public class BoardTest {
                 // algo tiene que decir/pasar con que no se puede mover mas la pieza
                 // TODO: tenemos que saber cuando TENEMOS que crear una nueva pieza
 
-        board.clearAndShiftRow(19);
+        board.isSingleLine(19);
 
         finishedBoard = new byte[][] {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -155,6 +155,7 @@ public class BoardTest {
         PieceBase piece = board.spawnNewPiece();
 
         board.movePiece(piece, 0);
+        //TODO: creo que hace falta un assert para probrar que se movio
     }
 
     @Test
