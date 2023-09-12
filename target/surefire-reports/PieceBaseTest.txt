@@ -1,4 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: PieceBaseTest
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.034 s - in PieceBaseTest
+Tests run: 19, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.012 s <<< FAILURE! - in PieceBaseTest
+testOrientationLPieceLeft(PieceBaseTest)  Time elapsed: 0.004 s  <<< FAILURE!
+org.junit.internal.ArrayComparisonFailure: arrays first differed at element [0][0]; expected:<0> but was:<1>
+	at PieceBaseTest.testOrientationLPieceLeft(PieceBaseTest.java:286)
+
+testOrientationLPieceRight(PieceBaseTest)  Time elapsed: 0 s  <<< FAILURE!
+org.junit.internal.ArrayComparisonFailure: arrays first differed at element [0][1]; expected:<1> but was:<0>
+	at PieceBaseTest.testOrientationLPieceRight(PieceBaseTest.java:316)
+
+testOrientationTPieceRotateLeftTest(PieceBaseTest)  Time elapsed: 0.001 s  <<< FAILURE!
+org.junit.internal.ArrayComparisonFailure: arrays first differed at element [0][0]; expected:<1> but was:<0>
+	at PieceBaseTest.testOrientationTPieceRotateLeftTest(PieceBaseTest.java:383)
+
