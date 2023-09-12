@@ -29,7 +29,7 @@ public class Board {
         return this.randomCol;
     }
     
-    private boolean canPlacePiece(PieceBase piece, int row, int col) {
+    public boolean canPlacePiece(PieceBase piece, int row, int col) {
         byte[][] orientation = piece.getCurrentOrientation();
         int pieceHeight = piece.getHeight();
         int pieceWidth = piece.getWidth();

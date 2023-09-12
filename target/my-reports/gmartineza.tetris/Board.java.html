@@ -29,7 +29,7 @@ public class Board {
 <span class="nc" id="L29">        return this.randomCol;</span>
     }
     
-    private boolean canPlacePiece(PieceBase piece, int row, int col) {
+    public boolean canPlacePiece(PieceBase piece, int row, int col) {
 <span class="fc" id="L33">        byte[][] orientation = piece.getCurrentOrientation();</span>
 <span class="fc" id="L34">        int pieceHeight = piece.getHeight();</span>
 <span class="fc" id="L35">        int pieceWidth = piece.getWidth();</span>
@@ -74,13 +74,13 @@ public class Board {
     private PieceBase getRandomPieceType() {
 <span class="fc" id="L75">        int pieceTypes = 7;</span>
 <span class="fc" id="L76">        int randomValue = random.nextInt(pieceTypes);</span>
-<span class="pc bpc" id="L77" title="6 of 8 branches missed.">        switch (randomValue) {</span>
+<span class="pc bpc" id="L77" title="5 of 8 branches missed.">        switch (randomValue) {</span>
             case 0:
 <span class="nc" id="L79">                return new SquarePiece();</span>
             case 1:
 <span class="nc" id="L81">                return new StickPiece();</span>
             case 2:
-<span class="nc" id="L83">                return new TPiece();</span>
+<span class="fc" id="L83">                return new TPiece();</span>
             case 3:
 <span class="nc" id="L85">                return new LPieceLeft();</span>
             case 4:
@@ -122,7 +122,7 @@ public class Board {
         }
 <span class="fc" id="L123">        int maxColumn = width - randomPieceType.getWidth();</span>
 <span class="fc" id="L124">        randomCol = random.nextInt(maxColumn + 1);</span>
-<span class="pc bpc" id="L125" title="1 of 2 branches missed.">        if (canPlacePiece(randomPieceType, 0, randomCol)) {</span>
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        if (canPlacePiece(randomPieceType, 0, randomCol)) {</span>
 <span class="fc" id="L126">            placePiece(randomPieceType, 0, randomCol, true);</span>
         }
 
