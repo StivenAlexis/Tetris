@@ -28,8 +28,8 @@ public class BoardTest {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },
                 { 1, 1, 1, 1, 1, 1, 1, 1, 0, 1 }
         };
 
@@ -61,8 +61,8 @@ public class BoardTest {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
-                { 0, 0, 0, 0, 0, 0, 0, 1, 1, 1 },
+                { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 },
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
         };
 
@@ -74,9 +74,86 @@ public class BoardTest {
             // guardamos la posición de la pieza actual mientras se la mueve hasta que se renueva a otra
                 // algo tiene que decir/pasar con que no se puede mover mas la pieza
                 // TODO: tenemos que saber cuando TENEMOS que crear una nueva pieza
+
+        board.clearAndShiftRow(19);
+
+        finishedBoard = new byte[][] {
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+                { 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 }
+        };
+
+        assertarrayEquals(finishedBoard,initialBoard);
     }
 
     private void assertarrayEquals(byte[][] finishedBoard, byte[][] initialBoard) {
+    }
+
+    @Test
+    public void randomSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece();
+    }
+
+    @Test
+    public void squarePieceSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(0, 0, 0);
+    }
+    @Test
+    public void stickSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(1, 0, 0);
+    }
+    @Test
+    public void tSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(2, 0, 0);
+    }
+    @Test
+    public void lPieceLeftSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(3, 0, 0);
+    }
+    @Test
+    public void lPieceRightSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(4, 0, 0);
+    }
+    @Test
+    public void dogPieceLeftSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(5, 0, 0);
+    }
+    @Test
+    public void dogPieceRightSpawnTest(){
+        Board board = new Board();
+        board.spawnNewPiece(6, 0, 0);
+    }
+
+    @Test
+    public void movePieceTest(){
+        Board board = new Board();
+        PieceBase piece = board.spawnNewPiece();
+
+        board.movePiece(piece, 0);
     }
 }
 

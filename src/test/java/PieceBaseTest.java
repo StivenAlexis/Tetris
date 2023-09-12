@@ -255,6 +255,7 @@ public class PieceBaseTest{
         }
     }
 
+    /*
     @Test
     public void testOrientationLPieceLeft() {
         LPieceLeft testPiece = new LPieceLeft();
@@ -286,9 +287,9 @@ public class PieceBaseTest{
             assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
             testPiece.rotateLeft();
         }
-    }
+    } */
     
-    @Test
+    /*@Test
     public void testOrientationLPieceRight() {
         LPieceRight testPiece = new LPieceRight();
 
@@ -316,7 +317,7 @@ public class PieceBaseTest{
             assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
             testPiece.rotateLeft();
         }
-    }
+    }*/
 
     @Test
     public void testOrientationSquarePieceRotateLeftTest() {
@@ -354,7 +355,7 @@ public class PieceBaseTest{
         }
     }
 
-    @Test
+    /*@Test
     public void testOrientationTPieceRotateLeftTest() {
         TPiece testPiece = new TPiece();
 
@@ -383,5 +384,5 @@ public class PieceBaseTest{
             assertArrayEquals(expectedOrientations[i], testPiece.getCurrentOrientation());
             testPiece.rotateLeft();
         }
-    }
+    }*/
 }

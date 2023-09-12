@@ -7,6 +7,7 @@ public class Board {
     private final byte width = 10;
     private final byte height = 20;
     private Random random = new Random();
+    private int randomCol;
 
     public Board() {
         board = new byte[height][width];
@@ -22,6 +23,10 @@ public class Board {
             throw new IllegalArgumentException("Initial matrix dimensions must match board dimensions.");
         }
         board = initialMatrix;
+    }
+    
+    private int getRandomCol(){
+        return this.randomCol;
     }
     
     private boolean canPlacePiece(PieceBase piece, int row, int col) {
@@ -116,7 +121,7 @@ public class Board {
             randomPieceType.rotateLeft();
         }
         int maxColumn = width - randomPieceType.getWidth();
-        int randomCol = random.nextInt(maxColumn + 1);
+        randomCol = random.nextInt(maxColumn + 1);
         if (canPlacePiece(randomPieceType, 0, randomCol)) {
             placePiece(randomPieceType, 0, randomCol, true);
         }
@@ -142,8 +147,34 @@ public class Board {
     }
 
 
-    public void movePiece(PieceBase piece, int row, int col) {
-        placePiece(piece, row, col, false);
-        placePiece(piece, row + 1, col, true);
+    public void movePiece(PieceBase piece, int row) {
+        placePiece(piece, row, randomCol, false);
+        placePiece(piece, row + 1, randomCol, true);
+    }
+
+    public boolean isSingleLine(int row) {
+        for (int col = 0; col < row; col++) {
+            if (board[row][col] != 1){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public void clearAndShiftRow(int rowIndex) {
+        if (rowIndex < 0 || rowIndex >= height) {
+            throw new IllegalArgumentException("clearAndShiftRow: Invalid rowIndex");
+        }
+        if (isSingleLine(rowIndex)) {
+            for (int col = 0; col < width; col++) {
+                board[rowIndex][col] = 0;
+            }
+
+            for (int row = rowIndex; row > 0; row--) {
+                for (int col = 0; col < width; col++) {
+                    board[row][col] = board[row - 1][col];
+                }
+            }
+        }
     }
 }
