@@ -110,7 +110,7 @@ public class Board {
         }
     }
 
-    public void spawnNewPiece() {
+    public PieceBase spawnNewPiece() {
         PieceBase randomPieceType = getRandomPieceType();
         for (int i = 0; i < random.nextInt(4) + 1; i++) {
             randomPieceType.rotateLeft();
@@ -120,9 +120,11 @@ public class Board {
         if (canPlacePiece(randomPieceType, 0, randomCol)) {
             placePiece(randomPieceType, 0, randomCol, true);
         }
+
+        return randomPieceType;
     }
 
-    public void spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
+    public PieceBase spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {
         PieceBase randomPieceType = getRandomPieceType(chosenPieceType);
         for (int i = 0; i < chosenRotation; i++) {
             randomPieceType.rotateLeft();
@@ -135,8 +137,9 @@ public class Board {
         else if (canPlacePiece(randomPieceType, 0, chosenCol)) {
             placePiece(randomPieceType, 0, chosenCol, true);
         }
-    }
 
+        return randomPieceType;
+    }
 
     public void movePiece(PieceBase piece, int row, int col) {
         placePiece(piece, row, col, false);
