@@ -8,6 +8,7 @@ public class Board {
     private final byte height = 20;
     private Random random = new Random();
     private int randomCol;
+    private int Count= 0;
 
     public Board() {
         board = new byte[height][width];
@@ -49,6 +50,10 @@ public class Board {
         }
 
         return true;
+    }
+
+    public boolean getCanPlacePiece(PieceBase piece, int row, int col) {
+        return canPlacePiece(piece, row, col);
     }
 
     public int placePiece(PieceBase piece, int row, int col, boolean place) {
@@ -182,4 +187,12 @@ public class Board {
             }
         }
     }
+
+    public int lineCount() {
+        for (int row = 0; row < 2; row++) {
+        clearAndShiftRow(row);
+        Count++; // Incrementa el contador
+    }
+    return Count;
+    }   
 }

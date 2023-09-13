@@ -8,7 +8,7 @@ public class Tetris {
     int row = 0;
     int randomCol;
     int col = 0;
-    private int lineCount=0; 
+    private int Count=0; 
    
         // Iniciar el juego
    
@@ -23,10 +23,10 @@ public class Tetris {
                 tick();
                 
                 
-                board.tetrisCompleteCounter();
+                board.lineCount();
 
                 // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza o hacer 5 tetris)
-                if (! board.canPlacePiece(currentPiece,0,0) || lineCount==5 ) {
+                if (! board.getCanPlacePiece(currentPiece,0,0) || Count==5 ) {
                     break; // El juego ha terminado
                 }
             }
@@ -38,22 +38,22 @@ public class Tetris {
         }
         private void tick(){
 
-            while (board.canPlacePiece(currentPiece, row, col)) {
+            while (board.getCanPlacePiece(currentPiece, row, col)) {
             
                 board.movePiece(currentPiece, row + 1);
             }
     
         }
             
-        }
+}
 
+         
          
 
 
 
 
 
-}
         
     
 

@@ -8,7 +8,7 @@ public class Clock {
     
     public void tick(){
         
-        while (board.canPlacePiece(currentPiece, row, col)) {
+        while (board.getCanPlacePiece(currentPiece, row, col)) {
             
             board.movePiece(currentPiece, row + 1);}
 
