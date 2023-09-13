@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Users\stive\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\stive\AppData\Local\Temp\surefire2763714080569289901\surefirebooter13030693348875830104.jar C:\Users\stive\AppData\Local\Temp\surefire2763714080569289901 2023-09-11T23-31-29_630-jvmRun1 surefire222847513869664999tmp surefire_05691094706407033600tmp"/>
+    <property name="sun.java.command" value="C:\Users\stive\AppData\Local\Temp\surefire14861957675003045225\surefirebooter17382854509590603603.jar C:\Users\stive\AppData\Local\Temp\surefire14861957675003045225 2023-09-12T21-46-11_091-jvmRun1 surefire14859274799349114192tmp surefire_07162523831198279013tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="d:\UCP\2doAno\Paradigmas2\tetris\target\test-classes;d:\UCP\2doAno\Paradigmas2\tetris\target\classes;C:\Users\stive\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\stive\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\stive\AppData\Local\Temp\surefire2763714080569289901\surefirebooter13030693348875830104.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\stive\AppData\Local\Temp\surefire14861957675003045225\surefirebooter17382854509590603603.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8+7"/>
@@ -58,19 +58,19 @@
     <property name="java.class.version" value="61.0"/>
   </properties>
   <testcase name="InstantiateLpiecetest" classname="PieceBaseTest" time="0"/>
+  <testcase name="SquarePieceRotateLeftTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="LPieceRightRotateRightTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="DogPieceRightRotateRightTest" classname="PieceBaseTest" time="0"/>
   <testcase name="InstantiateStickpiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsLPieceLeftRotateRightTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationSquarePieceRotateLeftTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsSquarePieceRotateRightTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsDogPieceLeftRotateRightTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsDogPieceRightRotateRightTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="StickPieceRotateLeftTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="StickPieceRotateRightTest" classname="PieceBaseTest" time="0"/>
   <testcase name="InstantiateTpiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationStickPieceRotateLeftTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="SquarePieceRotateRightTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="TPieceRotateRightTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="DogPieceLeftRotateLeftTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="DogPieceRightRotateLeftTest" classname="PieceBaseTest" time="0"/>
   <testcase name="InstantiateSquarepiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsStickPieceRotateRightTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationLPieceRightRotateRightTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationtDogPieceLeftRotateLeftTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationDogPieceRightRotateLeftTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="DogPieceLeftRotateRightTest" classname="PieceBaseTest" time="0"/>
+  <testcase name="LPieceLeftRotateRightTest" classname="PieceBaseTest" time="0"/>
   <testcase name="InstantiateDogpiecetest" classname="PieceBaseTest" time="0"/>
-  <testcase name="testOrientationsTPieceRotateRightTest" classname="PieceBaseTest" time="0"/>
 </testsuite>
