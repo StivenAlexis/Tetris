@@ -33,8 +33,8 @@ public class TetrisTest {
         assertEquals("Jugando",t.state());
     }
 
-    @Test(expected = IllegalStateException.class)
-    public void tetrisState2Test(){
+    @Test
+    public void cannotPlaceNewPieceTest(){
         byte[][] initialBoard = new byte[][] {
             
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -63,5 +63,6 @@ public class TetrisTest {
         Clock c = new Clock();
         Tetris t = new Tetris(b, c);
         t.start();
+        assertEquals("Game Over", t.state());
     }
 }

@@ -5,7 +5,7 @@ public class Tetris {
     private PieceBase currentPiece;
     private Clock clock;
     private int count = 0;
-    private int status = 0;
+    private static int status = 0;
     private String mensajeStatus = "";
     int row = 0;
     int randomCol;
@@ -14,6 +14,10 @@ public class Tetris {
     public Tetris(Board board, Clock clock) {
         this.clock = clock;
         this.board = board;
+    }
+
+    public static void setStatus(int value){
+        status = value;
     }
     // Iniciar el juego
     public void start() {

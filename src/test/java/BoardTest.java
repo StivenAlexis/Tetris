@@ -204,7 +204,7 @@ public class BoardTest {
         };
       
         Board board = new Board(initialBoard);
-        board.spawnNewPiece();
+        board.spawnNewPiece(0,0,0);
     }
 
     @Test
