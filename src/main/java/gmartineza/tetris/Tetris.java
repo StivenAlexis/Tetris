@@ -64,15 +64,13 @@ public class Tetris {
     }
 
     public void tick() {
-        //while (board.getCanPlacePiece(currentPiece, row, col)) {
-        //if (board.getCanPlacePiece(currentPiece, row, col)) {
-            //board.movePiece(currentPiece, row + 1);
+      
             if (getCurrentPiece() != null){
                 board.movePiece(getCurrentPiece(), row);
             }
             board.lineCount();
             clock.tick();
-        //}
+        
     }
 
     public void rotateLeft() {
