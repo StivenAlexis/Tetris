@@ -28,7 +28,7 @@ Proyecto presentado como Trabajo Práctico 1 en el Ciclo Lectivo 2023 para la ma
 
 5. **Tetris y condiciones para ganar**
     - [x] Cuando se completa una línea en el tablero, esta desaparece.
-    - [ ] El juego finaliza cuando se completan 5 líneas.
+    - [x] El juego finaliza cuando se completan 5 líneas.
     - [x] El tablero mantiene las mismas casillas durante todo el juego.
   
 ## UML esperado
