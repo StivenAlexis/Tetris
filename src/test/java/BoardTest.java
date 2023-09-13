@@ -189,7 +189,7 @@ public class BoardTest {
         };
       
         Board board = new Board(initialBoard);
-        PieceBase newPiece = board.spawnNewPiece();
+        board.spawnNewPiece();
     }
 
     @Test
@@ -222,7 +222,7 @@ public class BoardTest {
         };
       
         Board board = new Board(initialBoard);
-        PieceBase squarePiece = board.spawnNewPiece(0, 0, 0);
+        board.spawnNewPiece(0, 0, 0);
         
         byte[][] finalBoard = new byte[][] {
             
