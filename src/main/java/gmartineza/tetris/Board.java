@@ -190,8 +190,10 @@ public class Board {
 
     public int lineCount() {
         for (int row = 0; row < 2; row++) {
-        clearAndShiftRow(row);
+        if(isSingleLine(row)==true){ 
         Count++; // Incrementa el contador
+        clearAndShiftRow(row);
+        }
     }
     return Count;
     }   

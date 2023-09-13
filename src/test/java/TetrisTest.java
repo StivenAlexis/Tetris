@@ -34,4 +34,14 @@ public class TetrisTest {
 
         assertEquals("Jugando",t.state());
     }
+
+    @Test
+    public void tetrisState2Test(){
+        Board b = new Board();
+        Clock c = new Clock();
+        Tetris t = new Tetris(b, c);
+        t.start();
+
+        assertEquals("You are Winner",t.state());
+    }
 }

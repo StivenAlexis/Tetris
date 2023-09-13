@@ -308,7 +308,7 @@ public class BoardTest {
         
         int Count = b.lineCount();
         
-        assertEquals(Count,2);
+        assertEquals(1,Count);
         assertArrayEquals(finishedBoard,initialBoard);
         
     }

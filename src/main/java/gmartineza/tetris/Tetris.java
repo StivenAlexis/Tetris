@@ -8,7 +8,6 @@ public class Tetris {
     private int status = 0;
     private String mensajeStatus = "";
     int row = 0;
-    int randomCol;
     int col = 0;
 
     public Tetris(Board board, Clock clock) {
@@ -25,7 +24,7 @@ public class Tetris {
     // Bajar la pieza hasta llegar al final
     tick();
 
-    count = board.lineCount();
+    //count = board.lineCount();
 
     // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza
     // o hacer 5 tetris)
@@ -52,7 +51,8 @@ public class Tetris {
 
     public void tick() {
         while (board.getCanPlacePiece(currentPiece, row, col)) {
-            board.movePiece(currentPiece, row + 1);
+
+            board.movePiece(currentPiece, row++);
             clock.tick();
         }
     }
