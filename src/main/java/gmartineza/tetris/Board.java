@@ -8,7 +8,7 @@ public class Board {
     private final byte height = 20;
     private Random random = new Random();
     private int randomCol;
-    private int Count= 0;
+    private int count= 0;
 
     public Board() {
         board = new byte[height][width];
@@ -28,6 +28,30 @@ public class Board {
 
     public byte[][] getMatrix(){
         return board;
+    }
+
+    public byte getWidth(){
+        return width;
+    }
+
+    public byte getCell(int row, int col) {
+        return board[row][col];
+    }
+    
+    public int getRandomCol(){
+        return randomCol;
+    }
+
+    public void setRandomCol(int value){
+        randomCol = value;
+    }
+    
+    public int getCount(){
+        return count;
+    }
+
+    public void setCount(int value){
+        count = value;
     }
     
     private boolean canPlacePiece(PieceBase piece, int row, int col) {
@@ -126,9 +150,9 @@ public class Board {
             randomPieceType.rotateLeft();
         }
         int maxColumn = width - randomPieceType.getWidth();
-        int randomCol = random.nextInt(maxColumn + 1);
-        if (canPlacePiece(randomPieceType, 0, randomCol)) {
-            placePiece(randomPieceType, 0, randomCol, true);
+        setRandomCol(random.nextInt(maxColumn + 1));
+        if (canPlacePiece(randomPieceType, 0, getRandomCol())) {
+            placePiece(randomPieceType, 0, getRandomCol(), true);
         }
         else {
             throw new IllegalStateException("spawnNewPiece: Cannot place piece.");
@@ -143,7 +167,6 @@ public class Board {
             randomPieceType.rotateLeft();
         }
         int maxColumn = width - randomPieceType.getWidth();
-        //int randomCol = random.nextInt(maxColumn + 1);
         if (chosenCol > maxColumn){
             throw new IllegalStateException("spawnNewPiece(): chosenCol is outside allowed range.");
         }
@@ -158,12 +181,14 @@ public class Board {
     }
 
     public void movePiece(PieceBase piece, int row) {
-        placePiece(piece, row, randomCol, false);
-        placePiece(piece, row + 1, randomCol, true);
+        if (!(piece.getHeight() + row >= height)){
+            placePiece(piece, row, getRandomCol(), false);
+            placePiece(piece, row + 1, getRandomCol(), true);
+        }
     }
 
     public boolean isSingleLine(int row) {
-        for (int col = 0; col < row; col++) {
+        for (int col = 0; col < getWidth(); col++) {
             if (board[row][col] != 1){
                 return false;
             }
@@ -176,25 +201,31 @@ public class Board {
             throw new IllegalArgumentException("clearAndShiftRow: Invalid rowIndex");
         }
         if (isSingleLine(rowIndex)) {
-            for (int col = 0; col < width; col++) {
+            for (int col = 0; col < getWidth(); col++) {
                 board[rowIndex][col] = 0;
             }
 
             for (int row = rowIndex; row > 0; row--) {
-                for (int col = 0; col < width; col++) {
+                for (int col = 0; col < getWidth(); col++) {
                     board[row][col] = board[row - 1][col];
                 }
             }
+            setCount(getCount() + 1);
         }
     }
 
     public int lineCount() {
+<<<<<<< HEAD
         for (int row = 0; row < 2; row++) {
         if(isSingleLine(row)==true){ 
         Count++; // Incrementa el contador
         clearAndShiftRow(row);
         }
+=======
+        for (int row = 0; row < height; row++) {
+        clearAndShiftRow(row);
+>>>>>>> 20c275b371f00a289c04b053137d4de86a1adcfd
     }
-    return Count;
+    return getCount();
     }   
 }

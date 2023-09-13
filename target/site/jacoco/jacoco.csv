@@ -1,0 +1,12 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Tetris,gmartineza.tetris,StickPiece,0,74,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,PieceBase,10,85,3,3,2,22,3,7,0,7
+Tetris,gmartineza.tetris,TPiece,0,173,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,Board,71,436,17,55,13,85,16,42,0,16
+Tetris,gmartineza.tetris,DogPieceRight,0,90,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,LPieceLeft,0,173,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,LPieceRight,0,173,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,DogPieceLeft,0,90,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,SquarePiece,0,32,0,0,0,2,0,1,0,1
+Tetris,gmartineza.tetris,Tetris,35,85,6,6,10,24,7,5,2,4
+Tetris,gmartineza.tetris,Clock,7,6,0,0,2,2,1,1,1,1
