@@ -103,11 +103,11 @@ public class Board {
     private PieceBase getRandomPieceType() {
 <span class="fc" id="L104">        int pieceTypes = 7;</span>
 <span class="fc" id="L105">        int randomValue = random.nextInt(pieceTypes);</span>
-<span class="pc bpc" id="L106" title="1 of 8 branches missed.">        switch (randomValue) {</span>
+<span class="pc bpc" id="L106" title="2 of 8 branches missed.">        switch (randomValue) {</span>
             case 0:
 <span class="fc" id="L108">                return new SquarePiece();</span>
             case 1:
-<span class="fc" id="L110">                return new StickPiece();</span>
+<span class="nc" id="L110">                return new StickPiece();</span>
             case 2:
 <span class="fc" id="L112">                return new TPiece();</span>
             case 3:
@@ -155,7 +155,7 @@ public class Board {
 <span class="fc" id="L155">            placePiece(randomPieceType, 0, getRandomCol(), true);</span>
 <span class="fc" id="L156">        }</span>
         else {
-<span class="fc" id="L158">            throw new IllegalStateException(&quot;spawnNewPiece: Cannot place piece.&quot;);</span>
+<span class="fc" id="L158">            Tetris.setStatus(2);</span>
         }
 
 <span class="fc" id="L161">        return randomPieceType;</span>
@@ -170,11 +170,11 @@ public class Board {
 <span class="pc bpc" id="L170" title="1 of 2 branches missed.">        if (chosenCol &gt; maxColumn){</span>
 <span class="nc" id="L171">            throw new IllegalStateException(&quot;spawnNewPiece(): chosenCol is outside allowed range.&quot;);</span>
         }
-<span class="pc bpc" id="L173" title="1 of 2 branches missed.">        else if (canPlacePiece(randomPieceType, 0, chosenCol)) {</span>
+<span class="fc bfc" id="L173" title="All 2 branches covered.">        else if (canPlacePiece(randomPieceType, 0, chosenCol)) {</span>
 <span class="fc" id="L174">            placePiece(randomPieceType, 0, chosenCol, true);</span>
 <span class="fc" id="L175">        }</span>
         else {
-<span class="nc" id="L177">            throw new IllegalStateException(&quot;spawnNewPiece: Cannot place piece.&quot;);</span>
+<span class="fc" id="L177">            throw new IllegalStateException(&quot;spawnNewPiece: Cannot place piece.&quot;);</span>
         }
 
 <span class="fc" id="L180">        return randomPieceType;</span>

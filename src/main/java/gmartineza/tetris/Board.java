@@ -155,7 +155,7 @@ public class Board {
             placePiece(randomPieceType, 0, getRandomCol(), true);
         }
         else {
-            throw new IllegalStateException("spawnNewPiece: Cannot place piece.");
+            Tetris.setStatus(2);
         }
 
         return randomPieceType;
