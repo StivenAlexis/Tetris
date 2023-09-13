@@ -155,7 +155,7 @@ public class Board {
             placePiece(randomPieceType, 0, getRandomCol(), true);
         }
         else {
-            Tetris.setStatus(2);
+            throw new IllegalStateException("spawnNewPiece: Cannot place piece.");
         }
 
         return randomPieceType;
@@ -215,16 +215,8 @@ public class Board {
     }
 
     public int lineCount() {
-<<<<<<< HEAD
-        for (int row = 0; row < 2; row++) {
-        if(isSingleLine(row)==true){ 
-        Count++; // Incrementa el contador
-        clearAndShiftRow(row);
-        }
-=======
         for (int row = 0; row < height; row++) {
         clearAndShiftRow(row);
->>>>>>> 20c275b371f00a289c04b053137d4de86a1adcfd
     }
     return getCount();
     }   
