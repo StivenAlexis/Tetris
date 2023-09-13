@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.348" tests="15" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TetrisTest" time="0.008" tests="3" errors="0" skipped="0" failures="1">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,23 +61,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="colisionTest" classname="BoardTest" time="0.036">
-    <error message="10" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: 10
-	at BoardTest.colisionTest(BoardTest.java:79)
-</error>
+  <testcase name="tetrisState0Test" classname="TetrisTest" time="0.004"/>
+  <testcase name="tetrisState1Test" classname="TetrisTest" time="0">
+    <failure message="expected:&lt;[Jugando]&gt; but was:&lt;[Game Over]&gt;" type="org.junit.ComparisonFailure"><![CDATA[org.junit.ComparisonFailure: expected:<[Jugando]> but was:<[Game Over]>
+	at TetrisTest.tetrisState1Test(TetrisTest.java:35)
+]]></failure>
   </testcase>
-  <testcase name="dogPieceLeftSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="stickSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="boardIsFullTest" classname="BoardTest" time="0"/>
-  <testcase name="TestLineCount" classname="BoardTest" time="0.008"/>
-  <testcase name="squarePieceSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="lPieceRightSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="testGetCanPlacePiece" classname="BoardTest" time="0"/>
-  <testcase name="randomSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="tSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="boardIsNotFullTest" classname="BoardTest" time="0.004"/>
-  <testcase name="lPieceLeftSpawnTest" classname="BoardTest" time="0.001"/>
-  <testcase name="InstantiateBoardTest" classname="BoardTest" time="0.001"/>
-  <testcase name="movePieceTest" classname="BoardTest" time="0.001"/>
-  <testcase name="dogPieceRightSpawnTest" classname="BoardTest" time="0.001"/>
+  <testcase name="IntantiateTetrisTest" classname="TetrisTest" time="0"/>
 </testsuite>

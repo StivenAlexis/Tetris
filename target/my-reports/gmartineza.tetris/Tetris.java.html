@@ -1,101 +1,89 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tetris.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">gmartineza.tetris</a> &gt; <span class="el_source">Tetris.java</span></div><h1>Tetris.java</h1><pre class="source lang-java linenums">package gmartineza.tetris;
-
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tetris.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">gmartineza.tetris</a> &gt; <span class="el_source">Tetris.java</span></div><h1>Tetris.java</h1><pre class="source lang-java linenums">package gmartineza.tetris;
 
 public class Tetris {
     private Board board;
     private PieceBase currentPiece;
     private Clock clock;
-<span class="nc" id="L8">    private int Count=0;</span>
-<span class="nc" id="L9">    private int status = 0 ; </span>
-<span class="nc" id="L10">    private String mensajeStatus = &quot;&quot;;</span>
-<span class="nc" id="L11">    int row = 0;</span>
+<span class="fc" id="L7">    private int count = 0;</span>
+<span class="fc" id="L8">    private int status = 0;</span>
+<span class="fc" id="L9">    private String mensajeStatus = &quot;&quot;;</span>
+<span class="fc" id="L10">    int row = 0;</span>
     int randomCol;
-<span class="nc" id="L13">    int col = 0;</span>
+<span class="fc" id="L12">    int col = 0;</span>
 
-<span class="nc" id="L15">    public Tetris(Board board, Clock clock) {</span>
-<span class="nc" id="L16">        this.clock = clock;</span>
-<span class="nc" id="L17">        this.board = board;</span>
-<span class="nc" id="L18">    }</span>
-        // Iniciar el juego
-    
-        public void start() {
-            
-<span class="nc" id="L23">        status = 1;</span>
-<span class="nc bnc" id="L24" title="All 2 branches missed.">            while (status == 1) {</span>
-                // Insertar una nueva pieza aleatoria en la parte superior
-<span class="nc" id="L26">                currentPiece = board.spawnNewPiece();</span>
-                
-                // Bajar la pieza hasta llegar al final
-<span class="nc" id="L29">                tick();</span>
-                
-                
-<span class="nc" id="L32">                Count = board.lineCount();</span>
+<span class="fc" id="L14">    public Tetris(Board board, Clock clock) {</span>
+<span class="fc" id="L15">        this.clock = clock;</span>
+<span class="fc" id="L16">        this.board = board;</span>
+<span class="fc" id="L17">    }</span>
+    // Iniciar el juego
 
-                // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza o hacer 5 tetris)
-<span class="nc bnc" id="L35" title="All 2 branches missed.">                if (! board.getCanPlacePiece(currentPiece,0,0) ) {</span>
-<span class="nc" id="L36">                    status = 2; // El juego ha terminado</span>
-<span class="nc bnc" id="L37" title="All 2 branches missed.">                } else if( Count==5 ){</span>
-<span class="nc" id="L38">                    status = 3;</span>
-                }
-            }
-<span class="nc" id="L41">        }</span>
-        
-        public String state(){
+    /*public void start() {
+        status = 1;
+        // while (status == 1) {
+        // Insertar una nueva pieza aleatoria en la parte superior
+        currentPiece = board.spawnNewPiece();
 
-<span class="nc bnc" id="L45" title="All 2 branches missed.">            if(status == 0){</span>
+        // Bajar la pieza hasta llegar al final
+        tick();
 
-<span class="nc" id="L47">                mensajeStatus = &quot;No iniciado&quot;;</span>
+        count = board.lineCount();
 
-<span class="nc bnc" id="L49" title="All 2 branches missed.">            }else if(status == 1){</span>
-
-<span class="nc" id="L51">                mensajeStatus = &quot;Jugando&quot;;</span>
-
-<span class="nc bnc" id="L53" title="All 2 branches missed.">            }else if(status ==2 ){</span>
-
-<span class="nc" id="L55">                    mensajeStatus = &quot;Game Over&quot;;</span>
-
-<span class="nc" id="L57">            }else mensajeStatus = &quot;You are Winner&quot;; </span>
-
-<span class="nc" id="L59">        return mensajeStatus;    </span>
+        // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza
+        // o hacer 5 tetris)
+        if (!board.getCanPlacePiece(currentPiece, 0, 0)) {
+            status = 2; // El juego ha terminado
+        } else if (count == 5) {
+            status = 3;
         }
+        // }
+    }*/
+    public void start() {
+<span class="fc" id="L41">    status = 1;</span>
 
-        public void tick(){
+    // Insertar una nueva pieza aleatoria en la parte superior
+<span class="fc" id="L44">    currentPiece = board.spawnNewPiece();</span>
 
-<span class="nc bnc" id="L64" title="All 2 branches missed.">         while (board.getCanPlacePiece(currentPiece, row, col)) {</span>
-            
-<span class="nc" id="L66">               board.movePiece(currentPiece, row + 1);</span>
-                
-<span class="nc" id="L68">               clock.tick();</span>
-            }
-<span class="nc" id="L70">        }</span>
-        
+    // Bajar la pieza hasta llegar al final
+<span class="fc" id="L47">    tick();</span>
 
-        public void  rotateLeft(){
+<span class="fc" id="L49">    count = board.lineCount();</span>
 
-<span class="nc" id="L75">            currentPiece.rotateLeft();</span>
-<span class="nc" id="L76">        }</span>
-        
-        public void rotateRight(){
+    // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza
+    // o hacer 5 tetris)
+<span class="pc bpc" id="L53" title="1 of 2 branches missed.">    if (!board.getCanPlacePiece(currentPiece, 0, 0)) {</span>
+<span class="fc" id="L54">        status = 2; // El juego ha terminado</span>
+<span class="nc bnc" id="L55" title="All 2 branches missed.">    } else if (count == 5) {</span>
+<span class="nc" id="L56">        status = 3;</span>
+    }
+<span class="fc" id="L58">}</span>
 
-<span class="nc" id="L80">            currentPiece.rotateRight();</span>
-<span class="nc" id="L81">        }</span>
+
+    public String state() {
+<span class="fc bfc" id="L62" title="All 2 branches covered.">        if (status == 0) {</span>
+<span class="fc" id="L63">            mensajeStatus = &quot;No iniciado&quot;;</span>
+<span class="pc bpc" id="L64" title="1 of 2 branches missed.">        } else if (status == 1) {</span>
+<span class="nc" id="L65">            mensajeStatus = &quot;Jugando&quot;;</span>
+<span class="pc bpc" id="L66" title="1 of 2 branches missed.">        } else if (status == 2) {</span>
+<span class="fc" id="L67">            mensajeStatus = &quot;Game Over&quot;;</span>
+        } else
+<span class="nc" id="L69">            mensajeStatus = &quot;You are Winner&quot;;</span>
+
+<span class="fc" id="L71">        return mensajeStatus;</span>
+    }
+
+    public void tick() {
+<span class="fc bfc" id="L75" title="All 2 branches covered.">        while (board.getCanPlacePiece(currentPiece, row, col)) {</span>
+<span class="fc" id="L76">            board.movePiece(currentPiece, row + 1);</span>
+<span class="fc" id="L77">            clock.tick();</span>
+        }
+<span class="fc" id="L79">    }</span>
+
+    public void rotateLeft() {
+<span class="nc" id="L82">        currentPiece.rotateLeft();</span>
+<span class="nc" id="L83">    }</span>
+
+    public void rotateRight() {
+<span class="nc" id="L86">        currentPiece.rotateRight();</span>
+<span class="nc" id="L87">    }</span>
 }
-
-         
-         
-
-
-
-
-
-        
-    
-
-    
-
-
-
-
-
-
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
