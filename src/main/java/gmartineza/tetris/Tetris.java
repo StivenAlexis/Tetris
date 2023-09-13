@@ -51,7 +51,8 @@ public class Tetris {
     }
 
     public void tick() {
-        while (board.getCanPlacePiece(currentPiece, row, col)) {
+        //while (board.getCanPlacePiece(currentPiece, row, col)) {
+        if (board.getCanPlacePiece(currentPiece, row, col)) {
             board.movePiece(currentPiece, row + 1);
             clock.tick();
         }

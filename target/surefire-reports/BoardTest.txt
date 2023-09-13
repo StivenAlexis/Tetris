@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: BoardTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.348 s <<< FAILURE! - in BoardTest
-colisionTest(BoardTest)  Time elapsed: 0.036 s  <<< ERROR!
-java.lang.ArrayIndexOutOfBoundsException: 10
-	at BoardTest.colisionTest(BoardTest.java:79)
+Tests run: 16, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.252 s <<< FAILURE! - in BoardTest
+fourSingleLinesTest(BoardTest)  Time elapsed: 0.012 s  <<< FAILURE!
+java.lang.AssertionError: expected:<4> but was:<2>
+	at BoardTest.fourSingleLinesTest(BoardTest.java:386)
 

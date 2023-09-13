@@ -10,7 +10,7 @@ public class BoardTest {
     }
 
     @Test
-    public void colisionTest(){
+    public void insertAndClearTest(){
         byte[][] initialBoard = new byte[][] {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -67,16 +67,11 @@ public class BoardTest {
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
         };
 
-        assertarrayEquals(finishedBoard, board.getMatrix());
-        // for 
-        // while
-        // directo?
-        // como cambiamos el enfoque a la siguiente pieza?
-            // guardamos la posición de la pieza actual mientras se la mueve hasta que se renueva a otra
-                // algo tiene que decir/pasar con que no se puede mover mas la pieza
-                // TODO: tenemos que saber cuando TENEMOS que crear una nueva pieza
+        assertArrayEquals(finishedBoard, board.getMatrix());
 
-        board.isSingleLine(19);
+        for (int row = 0; row < board.getMatrix().length; row++) {
+            board.clearAndShiftRow(row);
+        }
 
         finishedBoard = new byte[][] {
                 { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -101,11 +96,8 @@ public class BoardTest {
                 { 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 }
         };
 
-        assertarrayEquals(finishedBoard,initialBoard);
-    }
-
-    private byte[] assertarrayEquals(byte[][] finishedBoard, byte[][] initialBoard) {
-        return null;
+        assertArrayEquals(finishedBoard, board.getMatrix());
+        assertEquals(board.getCount(), 1);
     }
 
     @Test
@@ -153,10 +145,34 @@ public class BoardTest {
     @Test
     public void movePieceTest(){
         Board board = new Board();
-        PieceBase piece = board.spawnNewPiece();
-
-        board.movePiece(piece, 0);
-        //TODO: creo que hace falta un assert para probrar que se movio
+        PieceBase piece = board.spawnNewPiece(1,0,0);
+        
+        for (int i = 0; i < board.getMatrix().length; i++) {
+            board.movePiece(piece, i);
+        }
+        byte[][] expectedBoard = new byte[][] {
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 1, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+        };
+        assertArrayEquals(expectedBoard, board.getMatrix());
     }
 
     @Test(expected = IllegalStateException.class)
@@ -164,7 +180,6 @@ public class BoardTest {
 
        
         byte[][] initialBoard = new byte[][] {
-            
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
                 { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
@@ -308,12 +323,12 @@ public class BoardTest {
         
         int Count = b.lineCount();
         
-        assertEquals(Count,2);
+        assertEquals(2,Count);
         assertArrayEquals(finishedBoard,initialBoard);
         
     }
     @Test
-    public void testGetCanPlacePiece() {
+    public void getCanPlacePieceTest() {
         // Crear una instancia de Board (o usar una instancia existente)
         Board board = new Board();
 
@@ -331,7 +346,62 @@ public class BoardTest {
         assertTrue(result);
     }
 
+    @Test
+    public void clear4LinesTest(){
+        byte[][] initialBoard = new byte[][] {
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+                { 0, 1, 1, 1, 1, 1, 1, 1, 1, 1 }
+        };
+
+        Board board = new Board(initialBoard);
+        PieceBase stick = board.spawnNewPiece(1, 0, 0);
+        for (int row = 0; row < initialBoard.length; row++) {
+            board.movePiece(stick, row);
+        }
+        board.lineCount();
+
+        byte[][] expectedBoard = new byte[][] {
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
+                { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }
+        };
+
+        assertArrayEquals(expectedBoard, board.getMatrix());
+        assertEquals(4, board.getCount());
+    }
 }
-// TODO: poner pieza clipeando
-// TODO: spawnNewPiece(), y con todas las piezas
-// TODO: movePiece()

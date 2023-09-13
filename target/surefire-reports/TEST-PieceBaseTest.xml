@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="PieceBaseTest" time="0.05" tests="16" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="PieceBaseTest" time="0.066" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -7,7 +7,7 @@
     <property name="java.specification.version" value="1.8"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="c:\Users\gmartineza\code\tetris\target\test-classes;c:\Users\gmartineza\code\tetris\target\classes;C:\Users\gmartineza\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmartineza\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="java.class.path" value="C:\Users\gmartineza\code\tetris\target\test-classes;C:\Users\gmartineza\code\tetris\target\classes;C:\Users\gmartineza\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmartineza\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="java.vm.vendor" value="Temurin"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -18,20 +18,20 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire5295081113624295372\surefirebooter1850445970966037046.jar C:\Users\gmartineza\AppData\Local\Temp\surefire5295081113624295372 2023-09-13T08-18-34_573-jvmRun1 surefire49192171834621914tmp surefire_07476815874821538633tmp"/>
-    <property name="surefire.test.class.path" value="c:\Users\gmartineza\code\tetris\target\test-classes;c:\Users\gmartineza\code\tetris\target\classes;C:\Users\gmartineza\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmartineza\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
+    <property name="sun.java.command" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire3569099992176681224\surefirebooter1102484915841375068.jar C:\Users\gmartineza\AppData\Local\Temp\surefire3569099992176681224 2023-09-13T09-28-10_972-jvmRun1 surefire3988373165624216169tmp surefire_03168490124819299230tmp"/>
+    <property name="surefire.test.class.path" value="C:\Users\gmartineza\code\tetris\target\test-classes;C:\Users\gmartineza\code\tetris\target\classes;C:\Users\gmartineza\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmartineza\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\gmartineza"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="java.home" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre"/>
-    <property name="basedir" value="c:\Users\gmartineza\code\tetris"/>
+    <property name="basedir" value="C:\Users\gmartineza\code\tetris"/>
     <property name="file.separator" value="\"/>
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire5295081113624295372\surefirebooter1850445970966037046.jar;C:\\Users\\gmartineza\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.3\\org.jacoco.agent-0.8.3-runtime.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire3569099992176681224\surefirebooter1102484915841375068.jar;C:\\Users\\gmartineza\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.3\\org.jacoco.agent-0.8.3-runtime.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\rt.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -47,7 +47,7 @@
     <property name="java.vendor.url.bug" value="https://github.com/adoptium/adoptium-support/issues"/>
     <property name="java.io.tmpdir" value="C:\Users\GMARTI~1\AppData\Local\Temp\"/>
     <property name="java.version" value="1.8.0_382"/>
-    <property name="user.dir" value="c:\Users\gmartineza\code\tetris"/>
+    <property name="user.dir" value="C:\Users\gmartineza\code\tetris"/>
     <property name="os.arch" value="amd64"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
@@ -61,10 +61,10 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="InstantiateLpiecetest" classname="PieceBaseTest" time="0"/>
+  <testcase name="InstantiateLpiecetest" classname="PieceBaseTest" time="0.001"/>
   <testcase name="SquarePieceRotateLeftTest" classname="PieceBaseTest" time="0"/>
   <testcase name="LPieceRightRotateRightTest" classname="PieceBaseTest" time="0"/>
-  <testcase name="DogPieceRightRotateRightTest" classname="PieceBaseTest" time="0.002"/>
+  <testcase name="DogPieceRightRotateRightTest" classname="PieceBaseTest" time="0"/>
   <testcase name="InstantiateStickpiecetest" classname="PieceBaseTest" time="0"/>
   <testcase name="StickPieceRotateLeftTest" classname="PieceBaseTest" time="0"/>
   <testcase name="StickPieceRotateRightTest" classname="PieceBaseTest" time="0"/>

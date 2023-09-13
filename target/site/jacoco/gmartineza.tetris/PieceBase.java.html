@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PieceBase.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">gmartineza.tetris</a> &gt; <span class="el_source">PieceBase.java</span></div><h1>PieceBase.java</h1><pre class="source lang-java linenums">package gmartineza.tetris;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class PieceBase implements IRotator {
+    public String name;
+    protected List&lt;byte[][]&gt; orientations;
+    protected int currentOrientationIndex;
+
+<span class="fc" id="L11">    public PieceBase(String name, List&lt;byte[][]&gt; orientations) {</span>
+<span class="fc" id="L12">        this.name = name;</span>
+<span class="fc" id="L13">        this.orientations = orientations;</span>
+<span class="fc" id="L14">        this.currentOrientationIndex = 0;</span>
+<span class="fc" id="L15">    }</span>
+
+<span class="fc" id="L17">    public PieceBase(String name, byte[][] orientation) {</span>
+<span class="fc" id="L18">        this.name = name;</span>
+<span class="fc" id="L19">        this.orientations = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L20">        this.orientations.add(orientation);</span>
+<span class="fc" id="L21">        this.currentOrientationIndex = 0;</span>
+<span class="fc" id="L22">    }</span>
+
+    public void rotateRight() {
+<span class="fc" id="L25">        currentOrientationIndex = (currentOrientationIndex + 1) % orientations.size();</span>
+<span class="fc" id="L26">    }</span>
+
+    public void rotateLeft() {
+<span class="fc" id="L29">        currentOrientationIndex = (currentOrientationIndex - 1 + orientations.size()) % orientations.size();</span>
+<span class="fc" id="L30">    }</span>
+
+    public byte[][] getCurrentOrientation() {
+<span class="fc" id="L33">        return orientations.get(currentOrientationIndex);</span>
+    }
+
+
+    public int getWidth() {
+<span class="fc" id="L38">        byte[][] piece = getCurrentOrientation();</span>
+<span class="pc bpc" id="L39" title="2 of 4 branches missed.">        if (piece != null &amp;&amp; piece.length &gt; 0) {</span>
+<span class="fc" id="L40">            return piece[0].length;</span>
+        } else {
+<span class="nc" id="L42">            throw new IllegalStateException(&quot;getWidth(): Piece orientation is not set or is empty.&quot;);</span>
+        }
+    }
+
+    public int getHeight() {
+<span class="fc" id="L47">        byte[][] piece = getCurrentOrientation();</span>
+<span class="pc bpc" id="L48" title="1 of 2 branches missed.">        if (piece != null) {</span>
+<span class="fc" id="L49">            return piece.length;</span>
+        } else {
+<span class="nc" id="L51">            throw new IllegalStateException(&quot;pieceHeight(): Piece orientation is not set.&quot;);</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
