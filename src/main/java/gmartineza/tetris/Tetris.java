@@ -19,12 +19,21 @@ public class Tetris {
     public static void setStatus(int value){
         status = value;
     }
+
+    public PieceBase getCurrentPiece(){
+        return currentPiece;
+    }
+
+    public void setCurrentPiece(PieceBase value){
+        currentPiece = value;
+    }
+
     // Iniciar el juego
     public void start() {
     status = 1;
 
     // Insertar una nueva pieza aleatoria en la parte superior
-    currentPiece = board.spawnNewPiece();
+    setCurrentPiece(board.spawnNewPiece());
 
     // Bajar la pieza hasta llegar al final
     tick();
@@ -56,10 +65,14 @@ public class Tetris {
 
     public void tick() {
         //while (board.getCanPlacePiece(currentPiece, row, col)) {
-        if (board.getCanPlacePiece(currentPiece, row, col)) {
-            board.movePiece(currentPiece, row + 1);
+        //if (board.getCanPlacePiece(currentPiece, row, col)) {
+            //board.movePiece(currentPiece, row + 1);
+            if (getCurrentPiece() != null){
+                board.movePiece(getCurrentPiece(), row);
+            }
+            board.lineCount();
             clock.tick();
-        }
+        //}
     }
 
     public void rotateLeft() {
