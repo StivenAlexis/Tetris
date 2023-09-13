@@ -2,6 +2,7 @@ gmartineza\tetris\Board.class
 gmartineza\tetris\LPieceLeft.class
 gmartineza\tetris\IRotator.class
 gmartineza\tetris\PieceBase.class
+gmartineza\tetris\Tetris.class
 gmartineza\tetris\Clock.class
 gmartineza\tetris\DogPieceRight.class
 gmartineza\tetris\LPieceRight.class

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.096" tests="14" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.085" tests="15" errors="1" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="CO"/>
     <property name="sun.boot.library.path" value="C:\Users\stive\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.8.7-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\stive\AppData\Local\Temp\surefire14861957675003045225\surefirebooter17382854509590603603.jar C:\Users\stive\AppData\Local\Temp\surefire14861957675003045225 2023-09-12T21-46-11_091-jvmRun1 surefire14859274799349114192tmp surefire_07162523831198279013tmp"/>
+    <property name="sun.java.command" value="C:\Users\stive\AppData\Local\Temp\surefire16358752190085878374\surefirebooter6071109409199470426.jar C:\Users\stive\AppData\Local\Temp\surefire16358752190085878374 2023-09-13T01-24-15_673-jvmRun1 surefire9204676297764337256tmp surefire_0220873031949122127tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="d:\UCP\2doAno\Paradigmas2\tetris\target\test-classes;d:\UCP\2doAno\Paradigmas2\tetris\target\classes;C:\Users\stive\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\stive\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\stive\AppData\Local\Temp\surefire14861957675003045225\surefirebooter17382854509590603603.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\stive\AppData\Local\Temp\surefire16358752190085878374\surefirebooter6071109409199470426.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8+7"/>
@@ -57,7 +57,7 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="colisionTest" classname="BoardTest" time="0.02">
+  <testcase name="colisionTest" classname="BoardTest" time="0.017">
     <error message="Index 10 out of bounds for length 10" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 10 out of bounds for length 10
 	at BoardTest.colisionTest(BoardTest.java:79)
 </error>
@@ -68,9 +68,10 @@
   <testcase name="TestLineCount" classname="BoardTest" time="0.002"/>
   <testcase name="squarePieceSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="lPieceRightSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="randomSpawnTest" classname="BoardTest" time="0"/>
+  <testcase name="testGetCanPlacePiece" classname="BoardTest" time="0"/>
+  <testcase name="randomSpawnTest" classname="BoardTest" time="0.001"/>
   <testcase name="tSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="boardIsNotFullTest" classname="BoardTest" time="0.001"/>
+  <testcase name="boardIsNotFullTest" classname="BoardTest" time="0"/>
   <testcase name="lPieceLeftSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="InstantiateBoardTest" classname="BoardTest" time="0"/>
   <testcase name="movePieceTest" classname="BoardTest" time="0"/>

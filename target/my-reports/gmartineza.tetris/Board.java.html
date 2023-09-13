@@ -53,7 +53,7 @@ public class Board {
     }
 
     public boolean getCanPlacePiece(PieceBase piece, int row, int col) {
-<span class="nc" id="L56">        return canPlacePiece(piece, row, col);</span>
+<span class="fc" id="L56">        return canPlacePiece(piece, row, col);</span>
     }
 
     public int placePiece(PieceBase piece, int row, int col, boolean place) {
@@ -87,13 +87,13 @@ public class Board {
             case 2:
 <span class="nc" id="L88">                return new TPiece();</span>
             case 3:
-<span class="fc" id="L90">                return new LPieceLeft();</span>
+<span class="nc" id="L90">                return new LPieceLeft();</span>
             case 4:
 <span class="nc" id="L92">                return new LPieceRight();</span>
             case 5:
 <span class="nc" id="L94">                return new DogPieceLeft();</span>
             case 6:
-<span class="nc" id="L96">                return new DogPieceRight();</span>
+<span class="fc" id="L96">                return new DogPieceRight();</span>
             default:
 <span class="nc" id="L98">                throw new IllegalStateException(&quot;getRandomPieceType(): Invalid random value for piece type&quot;);</span>
         }

@@ -1,50 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Tetris.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Tetris</a> &gt; <a href="index.source.html" class="el_package">gmartineza.tetris</a> &gt; <span class="el_source">Tetris.java</span></div><h1>Tetris.java</h1><pre class="source lang-java linenums">package gmartineza.tetris;
 
 
-<span class="nc" id="L4">public class Tetris {</span>
+public class Tetris {
     private Board board;
     private PieceBase currentPiece;
     private Clock clock;
-<span class="nc" id="L8">    int row = 0;</span>
+<span class="nc" id="L8">    private int Count=0;</span>
+<span class="nc" id="L9">    private int status = 0 ; </span>
+<span class="nc" id="L10">    private String mensajeStatus = &quot;&quot;;</span>
+<span class="nc" id="L11">    int row = 0;</span>
     int randomCol;
-<span class="nc" id="L10">    int col = 0;</span>
-<span class="nc" id="L11">    private int Count=0; </span>
-   
+<span class="nc" id="L13">    int col = 0;</span>
+
+<span class="nc" id="L15">    public Tetris(Board board, Clock clock) {</span>
+<span class="nc" id="L16">        this.clock = clock;</span>
+<span class="nc" id="L17">        this.board = board;</span>
+<span class="nc" id="L18">    }</span>
         // Iniciar el juego
-   
+    
         public void start() {
             
-        
-            while (true) {
+<span class="nc" id="L23">        status = 1;</span>
+<span class="nc bnc" id="L24" title="All 2 branches missed.">            while (status == 1) {</span>
                 // Insertar una nueva pieza aleatoria en la parte superior
-<span class="nc" id="L20">                currentPiece = board.spawnNewPiece();</span>
+<span class="nc" id="L26">                currentPiece = board.spawnNewPiece();</span>
                 
                 // Bajar la pieza hasta llegar al final
-<span class="nc" id="L23">                tick();</span>
+<span class="nc" id="L29">                tick();</span>
                 
                 
-<span class="nc" id="L26">                board.lineCount();</span>
+<span class="nc" id="L32">                Count = board.lineCount();</span>
 
                 // Comprobar si el juego ha terminado ( Si no se puede insertar una nueva pieza o hacer 5 tetris)
-<span class="nc bnc" id="L29" title="All 4 branches missed.">                if (! board.getCanPlacePiece(currentPiece,0,0) || Count==5 ) {</span>
-<span class="nc" id="L30">                    break; // El juego ha terminado</span>
+<span class="nc bnc" id="L35" title="All 2 branches missed.">                if (! board.getCanPlacePiece(currentPiece,0,0) ) {</span>
+<span class="nc" id="L36">                    status = 2; // El juego ha terminado</span>
+<span class="nc bnc" id="L37" title="All 2 branches missed.">                } else if( Count==5 ){</span>
+<span class="nc" id="L38">                    status = 3;</span>
                 }
             }
-<span class="nc" id="L33">        }</span>
+<span class="nc" id="L41">        }</span>
         
-        public void status(){
+        public String state(){
 
+<span class="nc bnc" id="L45" title="All 2 branches missed.">            if(status == 0){</span>
+
+<span class="nc" id="L47">                mensajeStatus = &quot;No iniciado&quot;;</span>
+
+<span class="nc bnc" id="L49" title="All 2 branches missed.">            }else if(status == 1){</span>
+
+<span class="nc" id="L51">                mensajeStatus = &quot;Jugando&quot;;</span>
+
+<span class="nc bnc" id="L53" title="All 2 branches missed.">            }else if(status ==2 ){</span>
+
+<span class="nc" id="L55">                    mensajeStatus = &quot;Game Over&quot;;</span>
+
+<span class="nc" id="L57">            }else mensajeStatus = &quot;You are Winner&quot;; </span>
+
+<span class="nc" id="L59">        return mensajeStatus;    </span>
+        }
+
+        public void tick(){
+
+<span class="nc bnc" id="L64" title="All 2 branches missed.">         while (board.getCanPlacePiece(currentPiece, row, col)) {</span>
+            
+<span class="nc" id="L66">               board.movePiece(currentPiece, row + 1);</span>
                 
-<span class="nc" id="L38">        }</span>
-        private void tick(){
-
-<span class="nc bnc" id="L41" title="All 2 branches missed.">            while (board.getCanPlacePiece(currentPiece, row, col)) {</span>
-            
-<span class="nc" id="L43">                board.movePiece(currentPiece, row + 1);</span>
+<span class="nc" id="L68">               clock.tick();</span>
             }
-    
-<span class="nc" id="L46">        }</span>
-            
+<span class="nc" id="L70">        }</span>
+        
+
+        public void  rotateLeft(){
+
+<span class="nc" id="L75">            currentPiece.rotateLeft();</span>
+<span class="nc" id="L76">        }</span>
+        
+        public void rotateRight(){
+
+<span class="nc" id="L80">            currentPiece.rotateRight();</span>
+<span class="nc" id="L81">        }</span>
 }
 
          
