@@ -311,7 +311,24 @@ public class BoardTest {
         assertEquals(Count,2);
         assertArrayEquals(finishedBoard,initialBoard);
         
+    }
+    @Test
+    public void testGetCanPlacePiece() {
+        // Crear una instancia de Board (o usar una instancia existente)
+        Board board = new Board();
 
+        // Crear una pieza de prueba (puedes usar una pieza existente o crear una mock)
+        DogPieceLeft piece = new DogPieceLeft();
+
+        // Definir una fila y columna de prueba
+        int row = 0;
+        int col = 0;
+
+        // Llamar a la función getCanPlacePiece
+        boolean result = board.getCanPlacePiece(piece, row, col);
+
+       
+        assertTrue(result);
     }
 
 }
