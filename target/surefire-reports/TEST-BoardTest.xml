@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.252" tests="16" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="BoardTest" time="0.222" tests="16" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -18,7 +18,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire3569099992176681224\surefirebooter1102484915841375068.jar C:\Users\gmartineza\AppData\Local\Temp\surefire3569099992176681224 2023-09-13T09-28-10_972-jvmRun1 surefire3988373165624216169tmp surefire_03168490124819299230tmp"/>
+    <property name="sun.java.command" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire7326892538882627318\surefirebooter6368186753874589687.jar C:\Users\gmartineza\AppData\Local\Temp\surefire7326892538882627318 2023-09-13T11-15-05_689-jvmRun1 surefire4970582295399780147tmp surefire_04269634660952769100tmp"/>
     <property name="surefire.test.class.path" value="C:\Users\gmartineza\code\tetris\target\test-classes;C:\Users\gmartineza\code\tetris\target\classes;C:\Users\gmartineza\.m2\repository\junit\junit\4.11\junit-4.11.jar;C:\Users\gmartineza\.m2\repository\org\hamcrest\hamcrest-core\1.3\hamcrest-core-1.3.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\gmartineza"/>
@@ -31,7 +31,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="surefire.real.class.path" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire3569099992176681224\surefirebooter1102484915841375068.jar;C:\\Users\\gmartineza\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.3\\org.jacoco.agent-0.8.3-runtime.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\GMARTI~1\AppData\Local\Temp\surefire7326892538882627318\surefirebooter6368186753874589687.jar;C:\\Users\\gmartineza\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.3\\org.jacoco.agent-0.8.3-runtime.jar"/>
     <property name="sun.boot.class.path" value="C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\resources.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\rt.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\sunrsasign.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jsse.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jce.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\charsets.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\lib\jfr.jar;C:\Program Files\Eclipse Adoptium\jdk-8.0.382.5-hotspot\jre\classes"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
@@ -61,24 +61,20 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="colisionTest" classname="BoardTest" time="0.019"/>
-  <testcase name="dogPieceLeftSpawnTest" classname="BoardTest" time="0.002"/>
+  <testcase name="dogPieceLeftSpawnTest" classname="BoardTest" time="0.021"/>
   <testcase name="stickSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="boardIsFullTest" classname="BoardTest" time="0.001"/>
-  <testcase name="TestLineCount" classname="BoardTest" time="0.004"/>
-  <testcase name="squarePieceSpawnTest" classname="BoardTest" time="0.002"/>
-  <testcase name="lPieceRightSpawnTest" classname="BoardTest" time="0.005"/>
+  <testcase name="TestLineCount" classname="BoardTest" time="0.011"/>
+  <testcase name="squarePieceSpawnTest" classname="BoardTest" time="0.001"/>
+  <testcase name="lPieceRightSpawnTest" classname="BoardTest" time="0"/>
+  <testcase name="clear4LinesTest" classname="BoardTest" time="0.017"/>
   <testcase name="randomSpawnTest" classname="BoardTest" time="0"/>
   <testcase name="tSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="fourSingleLinesTest" classname="BoardTest" time="0.012">
-    <failure message="expected:&lt;4&gt; but was:&lt;2&gt;" type="java.lang.AssertionError"><![CDATA[java.lang.AssertionError: expected:<4> but was:<2>
-	at BoardTest.fourSingleLinesTest(BoardTest.java:386)
-]]></failure>
-  </testcase>
   <testcase name="getCanPlacePieceTest" classname="BoardTest" time="0"/>
   <testcase name="boardIsNotFullTest" classname="BoardTest" time="0"/>
+  <testcase name="insertAndClearTest" classname="BoardTest" time="0"/>
   <testcase name="lPieceLeftSpawnTest" classname="BoardTest" time="0"/>
-  <testcase name="InstantiateBoardTest" classname="BoardTest" time="0.001"/>
-  <testcase name="movePieceTest" classname="BoardTest" time="0.001"/>
-  <testcase name="dogPieceRightSpawnTest" classname="BoardTest" time="0.003"/>
+  <testcase name="InstantiateBoardTest" classname="BoardTest" time="0"/>
+  <testcase name="movePieceTest" classname="BoardTest" time="0"/>
+  <testcase name="dogPieceRightSpawnTest" classname="BoardTest" time="0.009"/>
 </testsuite>
