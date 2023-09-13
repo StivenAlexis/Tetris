@@ -33,8 +33,3 @@ Proyecto presentado como Trabajo Práctico 1 en el Ciclo Lectivo 2023 para la ma
   
 ## UML esperado
 ![image](https://github.com/StivenAlexis/tetris/assets/68785609/b91a00b5-88d2-4cf7-aadc-d02ebfb3b4a6)
-
-
-### Consigna completa
-
-[Documento de Google Drive](https://docs.google.com/document/d/1Q8-DyXBk7Z8GW0YhhHe6swtRJrqpNcLw9915FJjFH9Y/)
