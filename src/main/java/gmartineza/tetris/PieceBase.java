@@ -51,4 +51,8 @@ public class PieceBase implements IRotator {
             throw new IllegalStateException("pieceHeight(): Piece orientation is not set.");
         }
     }
+
+    public String getName(){
+        return name;
+    }
 }
