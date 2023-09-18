@@ -1,5 +1,7 @@
 package gmartineza.tetris;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Board {
@@ -9,6 +11,7 @@ public class Board {
     private Random random = new Random();
     private int randomCol;
     private int count= 0;
+    public List<PieceBase> pieceList = new ArrayList<>();
 
     public Board() {
         board = new byte[height][width];
@@ -143,6 +146,7 @@ public class Board {
                 throw new IllegalStateException("getRandomPieceType(): chosenPieceType is outside allowed range.");
         }
     }
+    
 
     public PieceBase spawnNewPiece() {
         PieceBase randomPieceType = getRandomPieceType();
@@ -158,7 +162,19 @@ public class Board {
             throw new IllegalStateException("spawnNewPiece: Cannot place piece.");
         }
 
+        
+
         return randomPieceType;
+    }   
+
+    public  void addSpawnNewPiece() {
+        PieceBase randomPieceType = getRandomPieceType();
+        for (int i = 0; i < random.nextInt(4) + 1; i++) {
+            randomPieceType.rotateLeft();
+        }
+        
+        pieceList.add(randomPieceType);        
+
     }
 
     public PieceBase spawnNewPiece(int chosenPieceType, int chosenRotation, int chosenCol) {

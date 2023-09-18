@@ -1,5 +1,9 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import gmartineza.tetris.*;
 
 public class BoardTest {
@@ -404,4 +408,24 @@ public class BoardTest {
         assertArrayEquals(expectedBoard, board.getMatrix());
         assertEquals(4, board.getCount());
     }
+
+    @Test
+    public void fucntionalStivenTest(){
+        Board board = new Board();
+
+
+        for(int i = 0; i < 2; i++){
+            board.addSpawnNewPiece();
+        }
+
+       int count= (int) board.pieceList.stream().filter(pieceList -> pieceList.getName() == "stick").count();
+        
+        assertEquals(true,count==0);
+        
+    }
+
+    private void asserEquals(boolean b, boolean c) {
+    }
+
+
 }
