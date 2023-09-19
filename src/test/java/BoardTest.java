@@ -415,17 +415,18 @@ public class BoardTest {
 
 
         for(int i = 0; i < 2; i++){
-            board.addSpawnNewPiece();
+            board.addSpawnNewPiece(1);
         }
-
-       int count= (int) board.pieceList.stream().filter(pieceList -> pieceList.getName() == "stick").count();
+        board.addSpawnNewPiece(2);
+        assertNotNull(board.pieceList);
         
-        assertEquals(true,count==0);
+       int count= (int) board.pieceList.stream().filter(pieceList -> pieceList instanceof StickPiece).count();
+        
+        assertEquals(true,count>0);
         
     }
 
-    private void asserEquals(boolean b, boolean c) {
-    }
+    
 
 
 }

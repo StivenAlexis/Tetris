@@ -167,8 +167,8 @@ public class Board {
         return randomPieceType;
     }   
 
-    public  void addSpawnNewPiece() {
-        PieceBase randomPieceType = getRandomPieceType();
+    public  void addSpawnNewPiece(int chosenPieceType) {
+        PieceBase randomPieceType = getRandomPieceType(chosenPieceType);
         for (int i = 0; i < random.nextInt(4) + 1; i++) {
             randomPieceType.rotateLeft();
         }
